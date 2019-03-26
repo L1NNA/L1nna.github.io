@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>L1NNA</title>
+    <link>http://example.org/</link>
+    <description>Recent content on L1NNA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Sep 2018 14:51:12 +0600</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Assembly Code Data Mining</title>
+      <link>http://example.org/project/assembly-code-data-mining/</link>
+      <pubDate>Wed, 12 Sep 2018 14:51:12 +0600</pubDate>
+      
+      <guid>http://example.org/project/assembly-code-data-mining/</guid>
+      <description>&lt;p&gt;Assembly clone search greatly reduces the manual effort of reverse engineering since it can &lt;em&gt;identify the cloned parts that have been previously analyzed&lt;/em&gt;. By closely collaborating with reverse engineers, I studied the challenges, designed and implemented an award-winning clone search engine called &lt;a href=&#34;https://github.com/McGill-DMaS/Kam1n0-Community&#34;&gt;Kam1n0&lt;/a&gt;. It also includes specialized techniques that can mitigate the variance introduced by different processor families, different compilers, optimization techniques, and binary protection techniques. Kam1n0 has been presented at the Smart Cybersecurity Network Canada (SERENE-RISC), SOPHOS, ESET, Above Security, and Google.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Authorship Analysis</title>
+      <link>http://example.org/project/authorship-analysis/</link>
+      <pubDate>Wed, 12 Sep 2018 14:51:12 +0600</pubDate>
+      
+      <guid>http://example.org/project/authorship-analysis/</guid>
+      <description>&lt;p&gt;The internet provides an ideal anonymous channel for concealing computer-mediated malicious activities, as the network-based origins of critical electronic textual evidence (e.g., emails, blogs, forum posts, chat logs, etc.) can be easily repudiated. Given the anonymous documents, authorship analysis is the study of identifying the actual author and his/her socio-linguistic characteristics. Many linguistic stylometric features and computational techniques have been extensively studied for this purpose. However, most of them emphasize promoting the authorship attribution accuracy, and few works have been done for the purpose of constructing and visualizing the evidential traits. I opt for an interpretable and explainable approach by which &lt;em&gt;writing styles can be visualized, compared, and interpreted&lt;/em&gt; by an investigator like fingerprints. I also propose to integrate differential privacy and reinforcement learning to paraphrase text where writing style is sanitized.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Binary Provenance Analysis</title>
+      <link>http://example.org/project/binary-provenance/</link>
+      <pubDate>Wed, 12 Sep 2018 14:51:12 +0600</pubDate>
+      
+      <guid>http://example.org/project/binary-provenance/</guid>
+      <description>&lt;p&gt;Binary provenance denotes the &lt;em&gt;characteristics of a program that derives from its path from source code to executable form&lt;/em&gt;. Binary provenance is important in the domain of binary forensic and performance analysis. It provides important evidential trial for cybersecurity investigators to track down the hackers behind the security accidence. For example, the Lazarus group is linked to the Wannacry incidence by code similarity. I mainly focus on two critical aspects: &lt;em&gt;toolchain recovery&lt;/em&gt; and &lt;em&gt;authorship analysis&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Neural Malware Analysis</title>
+      <link>http://example.org/project/neural-malware-analysis/</link>
+      <pubDate>Wed, 12 Sep 2018 14:51:12 +0600</pubDate>
+      
+      <guid>http://example.org/project/neural-malware-analysis/</guid>
+      <description>&lt;p&gt;Malware behavioral indicators denote those potentially high-risk malicious behaviors exhibited, such as unintended network communications, file encryption, keystroke logging, sandbox evasion, and camera manipulation. Generally, they are generated using sandboxes or simulators. However, the complexity of modern malware has been considerably increased. Malware is becoming sandbox-aware by incorporating modern evasive techniques. To address these issues, I propose a new neural network-based static scanner that can &lt;em&gt;characterize the malicious behaviors&lt;/em&gt; of a given executable, &lt;em&gt;without running it in a sandbox&lt;/em&gt;. It can be used as an additional binary analytic layer to mitigate the issues of polymorphism, metamorphism, and evasive techniques.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/publications/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/publications/publications/</guid>
+      <description>Journal Articles (3 + 2 in progress)   S.</description>
+    </item>
+    
+  </channel>
+</rss>
