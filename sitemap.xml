@@ -3,72 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/project/assembly-code-data-mining/</loc>
+    <loc>http://l1nna.com/project/assembly-code-data-mining/</loc>
     <lastmod>2018-09-12T14:51:12+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/project/authorship-analysis/</loc>
+    <loc>http://l1nna.com/project/authorship-analysis/</loc>
     <lastmod>2018-09-12T14:51:12+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/project/binary-provenance/</loc>
+    <loc>http://l1nna.com/project/binary-provenance/</loc>
     <lastmod>2018-09-12T14:51:12+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/project/neural-malware-analysis/</loc>
+    <loc>http://l1nna.com/project/neural-malware-analysis/</loc>
     <lastmod>2018-09-12T14:51:12+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/author/jamica-jock/</loc>
+    <loc>http://l1nna.com/author/jamica-jock/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/author/john-doe/</loc>
+    <loc>http://l1nna.com/author/john-doe/</loc>
     <lastmod>2018-09-12T14:51:12+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/author/somrat/</loc>
+    <loc>http://l1nna.com/author/somrat/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/publications/publications/</loc>
+    <loc>http://l1nna.com/publications/publications/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/author/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.org/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.org/</loc>
+    <loc>http://l1nna.com/author/</loc>
     <lastmod>2018-09-12T14:51:12+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/project/</loc>
+    <loc>http://l1nna.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://l1nna.com/</loc>
     <lastmod>2018-09-12T14:51:12+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/publications/</loc>
+    <loc>http://l1nna.com/project/</loc>
+    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>http://l1nna.com/publications/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://l1nna.com/tags/</loc>
     <priority>0</priority>
   </url>
   
