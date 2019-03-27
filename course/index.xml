@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Courses on L1NNA</title>
+    <link>http://l1nna.com/course/</link>
+    <description>Recent content in Courses on L1NNA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://l1nna.com/course/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CISC 327 Software Quality Assurance</title>
+      <link>http://l1nna.com/course/cisc327/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://l1nna.com/course/cisc327/</guid>
+      <description>This course will cover association rules mining, classification analysis, cluster analysis, text mining, basic concepts and methods of frequent patterns mining, online analytical mining (OLAM), online analytical processing (OLAP), and datawarehouse architecture.</description>
+    </item>
+    
+    <item>
+      <title>CISC 372 Advanced Data Analytics</title>
+      <link>http://l1nna.com/course/cisc372/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://l1nna.com/course/cisc372/</guid>
+      <description>This course will cover association rules mining, classification analysis, cluster analysis, text mining, basic concepts and methods of frequent patterns mining, online analytical mining (OLAM), online analytical processing (OLAP), and datawarehouse architecture.</description>
+    </item>
+    
+    <item>
+      <title>CSEC 102 Modern Software Exploitation and Defense</title>
+      <link>http://l1nna.com/course/csec102/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://l1nna.com/course/csec102/</guid>
+      <description>This course will cover association rules mining, classification analysis, cluster analysis, text mining, basic concepts and methods of frequent patterns mining, online analytical mining (OLAM), online analytical processing (OLAP), and datawarehouse architecture.</description>
+    </item>
+    
+    <item>
+      <title>GLIS 630 Data Mining</title>
+      <link>http://l1nna.com/course/glis630/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://l1nna.com/course/glis630/</guid>
+      <description>This course will cover association rules mining, classification analysis, cluster analysis, text mining, basic concepts and methods of frequent patterns mining, online analytical mining (OLAM), online analytical processing (OLAP), and datawarehouse architecture.</description>
+    </item>
+    
+  </channel>
+</rss>

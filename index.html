@@ -52,6 +52,8 @@
 </div>
 <!-- End Preloader -->
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 <!-- Fixed Navigation -->
 <nav id="navigation" class="navbar navbar-expand-lg navigation sticky-top">
         <div class="container-fluid">
@@ -81,9 +83,9 @@
                                 
                                 <li class="nav-item"><a class="nav-link" data-scroll href="#projects">Projects</a></li>
                                 
-                                <li class="nav-item"><a class="nav-link" data-scroll href="#">Courses</a></li>
-                                
                                 <li class="nav-item"><a class="nav-link" data-scroll href="#publications">Publications</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" data-scroll href="#courses">Courses</a></li>
                                 
                                 <li class="nav-item"><a class="nav-link" data-scroll href="#contact">Contact</a></li>
                                 
@@ -99,7 +101,7 @@
 
 
 <!-- Welcome Slider-->
-<section class="hero-area" style='background-image: url("https://cdn-images-1.medium.com/max/1600/1*m2gDBT_nc-iE7R4AM3sHBQ.jpeg");'>
+<section class="hero-area" style='background-image: url("https://www.vircom.com/wp-content/uploads/xekxe_vr0ec-markus-spiske.jpg");'>
     <div class="block container-fluid text-left">
         <div class="row">
 
@@ -187,7 +189,7 @@
 <section class="overly section bg-one" style="padding-top:20px;padding-bottom:0;">
     <div class="container-fluid">
         <div class="row">
-            <div class="title text-left wow fadeInUp" style="padding:0;" data-wow-duration="500ms">
+            <div class="title text-right wow fadeInUp" style="padding:0;" data-wow-duration="500ms">
                 <p style="color:white">Sum Ergo Computo; I am therefore I compute.</p>
             </div>
         </div>
@@ -198,12 +200,11 @@
 
 
 
-
 <!-- about 2 -->
 <section class="about-2 section padding-0 overly" style="background-image: url(http://duanlab.ca/img/Queen%27sCampus.jpg)">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-8">
                 <div class="content-block">
                     
                     
@@ -241,7 +242,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 padding-0 ">
+            <div class="col-lg-4 padding-0 ">
+                <div class="content-block">
+                    <div class="text-right">
+                        <h4>News</h4>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -341,7 +348,7 @@
 
 
 <!-- Start Call To Action -->
-<section id="hiring" class="call-to-action section bg-1-c overly" style='background-image: url("https://cdn-images-1.medium.com/max/1600/1*m2gDBT_nc-iE7R4AM3sHBQ.jpeg")'>
+<section id="hiring" class="call-to-action section bg-1-c overly" style='background-image: url("http://l1nna.com/images/backgrounds/bg-3.jpeg")'>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -420,45 +427,57 @@
                 
                 <!-- single blog post -->
                 <div class="card  clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <img class="card-img-top" src="http://l1nna.com/project/assembly-code-data-mining/re_clone_search.png" alt="Card image">
+                    
+                    <div class="card-img-top-div"
+                        style="background-image: url(http://l1nna.com/project/assembly-code-data-mining/re_clone_search.png)"></div>
                     <div class="card-body">
                         <h3 class="card-title"><a href="http://l1nna.com/project/assembly-code-data-mining/">Assembly Code Data Mining</a></h3>
                         <p class="card-text"><p>Assembly clone search greatly reduces the manual effort of reverse engineering since it can <em>identify the cloned parts that have been previously analyzed</em>. By closely collaborating with reverse engineers, I studied the challenges, designed and implemented an award-winning clone search engine called <a href="https://github.com/McGill-DMaS/Kam1n0-Community">Kam1n0</a>. It also includes specialized techniques that can mitigate the variance introduced by different processor families, different compilers, optimization techniques, and binary protection techniques. Kam1n0 has been presented at the Smart Cybersecurity Network Canada (SERENE-RISC), SOPHOS, ESET, Above Security, and Google.</p></p>
                         <a class="btn btn-transparent" href="http://l1nna.com/project/assembly-code-data-mining/">Read more</a>
                     </div>
+                    <a class="btn btn-transparent" href="http://l1nna.com/project/assembly-code-data-mining/">Read more</a>
                 </div>
                 <!-- /single blog post -->
                 
                 <!-- single blog post -->
                 <div class="card  clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <img class="card-img-top" src="http://l1nna.com/project/authorship-analysis/re_aa.png" alt="Card image">
+                    
+                    <div class="card-img-top-div"
+                        style="background-image: url(http://l1nna.com/project/authorship-analysis/re_aa.png)"></div>
                     <div class="card-body">
                         <h3 class="card-title"><a href="http://l1nna.com/project/authorship-analysis/">Authorship Analysis</a></h3>
                         <p class="card-text"><p>The internet provides an ideal anonymous channel for concealing computer-mediated malicious activities, as the network-based origins of critical electronic textual evidence (e.g., emails, blogs, forum posts, chat logs, etc.) can be easily repudiated. Given the anonymous documents, authorship analysis is the study of identifying the actual author and his/her socio-linguistic characteristics. Many linguistic stylometric features and computational techniques have been extensively studied for this purpose. However, most of them emphasize promoting the authorship attribution accuracy, and few works have been done for the purpose of constructing and visualizing the evidential traits. I opt for an interpretable and explainable approach by which <em>writing styles can be visualized, compared, and interpreted</em> by an investigator like fingerprints. I also propose to integrate differential privacy and reinforcement learning to paraphrase text where writing style is sanitized.</p></p>
                         <a class="btn btn-transparent" href="http://l1nna.com/project/authorship-analysis/">Read more</a>
                     </div>
+                    <a class="btn btn-transparent" href="http://l1nna.com/project/authorship-analysis/">Read more</a>
                 </div>
                 <!-- /single blog post -->
                 
                 <!-- single blog post -->
                 <div class="card  clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <img class="card-img-top" src="http://l1nna.com/project/binary-provenance/re_pr.png" alt="Card image">
+                    
+                    <div class="card-img-top-div"
+                        style="background-image: url(http://l1nna.com/project/binary-provenance/re_pr.png)"></div>
                     <div class="card-body">
                         <h3 class="card-title"><a href="http://l1nna.com/project/binary-provenance/">Binary Provenance Analysis</a></h3>
                         <p class="card-text"><p>Binary provenance denotes the <em>characteristics of a program that derives from its path from source code to executable form</em>. Binary provenance is important in the domain of binary forensic and performance analysis. It provides important evidential trial for cybersecurity investigators to track down the hackers behind the security accidence. For example, the Lazarus group is linked to the Wannacry incidence by code similarity. I mainly focus on two critical aspects: <em>toolchain recovery</em> and <em>authorship analysis</em>.</p></p>
                         <a class="btn btn-transparent" href="http://l1nna.com/project/binary-provenance/">Read more</a>
                     </div>
+                    <a class="btn btn-transparent" href="http://l1nna.com/project/binary-provenance/">Read more</a>
                 </div>
                 <!-- /single blog post -->
                 
                 <!-- single blog post -->
                 <div class="card  clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <img class="card-img-top" src="http://l1nna.com/project/neural-malware-analysis/re_mal.png" alt="Card image">
+                    
+                    <div class="card-img-top-div"
+                        style="background-image: url(http://l1nna.com/project/neural-malware-analysis/re_mal.png)"></div>
                     <div class="card-body">
                         <h3 class="card-title"><a href="http://l1nna.com/project/neural-malware-analysis/">Neural Malware Analysis</a></h3>
                         <p class="card-text"><p>Malware behavioral indicators denote those potentially high-risk malicious behaviors exhibited, such as unintended network communications, file encryption, keystroke logging, sandbox evasion, and camera manipulation. Generally, they are generated using sandboxes or simulators. However, the complexity of modern malware has been considerably increased. Malware is becoming sandbox-aware by incorporating modern evasive techniques. To address these issues, I propose a new neural network-based static scanner that can <em>characterize the malicious behaviors</em> of a given executable, <em>without running it in a sandbox</em>. It can be used as an additional binary analytic layer to mitigate the issues of polymorphism, metamorphism, and evasive techniques.</p></p>
                         <a class="btn btn-transparent" href="http://l1nna.com/project/neural-malware-analysis/">Read more</a>
                     </div>
+                    <a class="btn btn-transparent" href="http://l1nna.com/project/neural-malware-analysis/">Read more</a>
                 </div>
                 <!-- /single blog post -->
                 
@@ -466,7 +485,7 @@
 
 
             <div class="all-post text-center col-lg-12">
-                <a class="btn btn-main" href="/posts">View All</a>
+                <a class="btn btn-main" href="/project">View All</a>
             </div>
         </div>
     </div>
@@ -491,9 +510,11 @@
 
             <!-- section content -->
             <div class="col-lg-8 publications-content  wow fadeInUp">
-                
+                <div id="publications-desc" class="medium-12 small-12 columns">
+                    <div id="publications-desc-inner">
+                        
 
-                
+                        
 
 <h3 id="journal-articles-span-class-cat-3-2-in-progress-span">Journal Articles <span class='cat'>(3 + 2 in progress)<span></h3>
 
@@ -951,17 +972,97 @@
 </code></pre></div>
 
 
-                
+                        
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a id="publications-expand" class="btn btn-main">Read More</a>
+                </div>
             </div>
 
             <!-- section content -->
-            <div class="all-post text-center col-lg-12">
-                <a class="btn btn-main" href="#">View All</a>
-            </div>
+            
         </div>
     </div>
 </section>
 <!-- /blog -->
+
+<!-- Courses Section -->
+
+<section class="section bg-one" id="courses">
+    <div class="container">
+        <div class="row ">
+            <div class="col-xl-12">
+                <!-- section title -->
+                <div class="title text-center">
+                    <h2> Courses</h2>
+                    <div class="border-meghna"></div>
+                </div>
+                <!-- /section title -->
+            </div>
+        </div>
+        <div class="row course-items-wrapper">
+            
+            <!-- single blog post -->
+            <div class="mix col-lg-12">
+                <div class="course-block wow fadeInUp" data-wow-duration="500ms" style="background-image: url(/course/cisc327/image.jpg)">
+                    <div class="image"></div>
+                    <div class="caption">
+                        <i class="fas fa-code-branch"></i>
+                        <h4><a href="http://l1nna.com/course/cisc327/">CISC 327 Software Quality Assurance</a></h4>
+                        <h4>2019-fall</h4>
+                        <h4>Queen&#39;s University</h4>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- single blog post -->
+            <div class="mix col-lg-12">
+                <div class="course-block wow fadeInUp" data-wow-duration="500ms" style="background-image: url(/course/cisc372/image.jpg)">
+                    <div class="image"></div>
+                    <div class="caption">
+                        <i class="fas fa-chart-line"></i>
+                        <h4><a href="http://l1nna.com/course/cisc372/">CISC 372 Advanced Data Analytics</a></h4>
+                        <h4>2019-winter</h4>
+                        <h4>Queen&#39;s University</h4>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- single blog post -->
+            <div class="mix col-lg-12">
+                <div class="course-block wow fadeInUp" data-wow-duration="500ms" style="background-image: url(/course/csec102/image.jpg)">
+                    <div class="image"></div>
+                    <div class="caption">
+                        <i class="fas fa-server"></i>
+                        <h4><a href="http://l1nna.com/course/csec102/">CSEC 102 Modern Software Exploitation and Defense</a></h4>
+                        <h4>2019</h4>
+                        <h4>McGill University</h4>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- single blog post -->
+            <div class="mix col-lg-12">
+                <div class="course-block wow fadeInUp" data-wow-duration="500ms" style="background-image: url(/course/glis630/image.jpg)">
+                    <div class="image"></div>
+                    <div class="caption">
+                        <i class="fas fa-server"></i>
+                        <h4><a href="http://l1nna.com/course/glis630/">GLIS 630 Data Mining</a></h4>
+                        <h4>2018-winter</h4>
+                        <h4>McGill University</h4>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- /Courses -->
 
 
 

@@ -46,8 +46,29 @@
   </url>
   
   <url>
+    <loc>http://l1nna.com/course/cisc327/</loc>
+  </url>
+  
+  <url>
+    <loc>http://l1nna.com/course/cisc372/</loc>
+  </url>
+  
+  <url>
+    <loc>http://l1nna.com/course/csec102/</loc>
+  </url>
+  
+  <url>
     <loc>http://l1nna.com/categories/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://l1nna.com/course/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://l1nna.com/course/glis630/</loc>
   </url>
   
   <url>
