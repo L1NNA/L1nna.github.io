@@ -6,10 +6,19 @@
     <description>Recent content on L1NNA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Sep 2018 14:51:12 +0600</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://l1nna.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Deep Learning Server Budget Build</title>
+      <link>https://l1nna.com/post/deep-learning-hardware/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/post/deep-learning-hardware/</guid>
+      <description>I was looking for a budget build workstation for deep learning model training.</description>
+    </item>
     
     <item>
       <title>Assembly Code Data Mining</title>
@@ -90,6 +99,15 @@
       
       <guid>https://l1nna.com/course/glis630/</guid>
       <description>This course will cover association rules mining, classification analysis, cluster analysis, text mining, basic concepts and methods of frequent patterns mining, online analytical mining (OLAM), online analytical processing (OLAP), and datawarehouse architecture.</description>
+    </item>
+    
+    <item>
+      <title>IEEE Xplore PDF Check - Missing Fonts</title>
+      <link>https://l1nna.com/post/xplor-check-missing-font/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/post/xplor-check-missing-font/</guid>
+      <description>We got a notification last week that our recent paper did not pass the IEEE Xplore compliance check.</description>
     </item>
     
   </channel>

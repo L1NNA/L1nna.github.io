@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" scroll-behavior="smooth"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Building a DL server on budget.">
+    <meta name="author" content="Steven">
+
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.53" />
+
+    <title>Deep Learning Server Budget Build | Posts</title>
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://l1nna.com/images/favicon.ico"/>
+
+    <!-- CSS -->
+    <!-- Fontawesome Icon font -->
+    <link rel="stylesheet" href="https://l1nna.com/plugins/themefisher-font/style.css">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="https://l1nna.com/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://l1nna.com/plugins/animate-css/animate.css">
+    <!-- Magnific popup css -->
+    <link rel="stylesheet" href="https://l1nna.com/plugins/magnific-popup/dist/magnific-popup.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://l1nna.com/plugins/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="https://l1nna.com/plugins/slick-carousel/slick/slick-theme.css">
+    <!-- Main Stylesheet -->
+    
+    <link rel="stylesheet" href="https://l1nna.com/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="52">
+        <div id="content">
+
+<!-- Fixed Navigation -->
+<nav id="navigation" class="navbar navbar-expand-lg navigation sticky-top">
+        <div class="container-fluid">
+
+                <!-- logo -->
+                <a class="navbar-brand logo" href="https://l1nna.com/">
+                        <img src="https://l1nna.com/images/logo_ls.png" alt="Logo" />
+                        <span class="pl-2 font-weight-bold">L1NNA</span>
+                </a>
+                <!-- /logo -->
+
+                <!-- responsive nav button -->
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- /responsive nav button -->
+
+                <!-- main nav -->
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto navigation-menu">
+                                <li class="nav-item"><a class="nav-link" data-scroll href="https://l1nna.com/#body">Home</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" data-scroll href="https://l1nna.com/#our-team">Team</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" data-scroll href="https://l1nna.com/#hiring">Oppertunities</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" data-scroll href="https://l1nna.com/#projects">Projects</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" data-scroll href="https://l1nna.com/#publications">Publications</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" data-scroll href="https://l1nna.com/#courses">Courses</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" data-scroll href="https://l1nna.com/#blogs">Blogs</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" data-scroll href="https://l1nna.com/#sponsor">Funding</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" data-scroll href="https://l1nna.com/#contact">Contact</a></li>
+                                
+                        </ul>
+                </div>
+                
+                <!-- /main nav -->
+        </div>
+
+</nav>
+<!-- End Fixed Navigation -->
+
+
+<section class="section bg-1-c bg-1-c-d overly" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center single-post-header">
+                <h1>Deep Learning Server Budget Build</h1>
+                <ul class="list-inline mb-50">
+                    <li class="list-inline-item"><a href="/author/steven">Steven</a></li>
+                    <li class="list-inline-item">Tuesday, Jan 1, 2019</li>
+                </ul>
+                <img class="img-fluid mb-50" src="https://picsum.photos/1024/768/?image=0" alt="blog-image">
+            </div>
+            <div class="col-lg-8 offset-lg-2">
+                <div class="post-single-content default bg-two">
+                    <p>I was looking for a budget build workstation for deep learning model training.
+I decided that the system to start with should have the <strong><em>best price-to-flop performance</em></strong>, since my experience with the latest Titan V/Telsa V100 on Google Cloud is not very good. Training complex models are not significantly faster than the TitanXP in our lab.
+It will still take some time for the major deep learning frameworks to fully exploit the advantages of the added Tensor Cores.
+With the same budget, I can already get 4x1080ti which can significantly boost my training speed by data parallelization.
+Belows are benchmarks and specs from <a href="https://github.com/u39kun/deep-learning-benchmark">Yusaku Sako</a>. My biased observation is that, <em>optimizing my code will make my models get trained faster than switching to the latest GPU for my use cases</em>.</p>
+
+<style>
+td {
+        border-bottom: 1px groove #c7c8cb;
+        border-top: 1px groove #c7c8cb;
+        padding-left:20px;
+}
+
+table{
+    background-color: rgba(0, 0, 0, .486);
+    padding: 20px;
+    font-size: 10pt;
+    width: 100%;
+}
+
+img{
+    background-color: rgba(0, 0, 0, .486);
+}
+
+center{
+    overflow-x: auto;
+}
+</style>
+
+<p><center></p>
+
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Architecture</th>
+<th>Memory</th>
+<th>CUDA</th>
+<th>Tensor Cores</th>
+<th>F32 TFLOPS</th>
+<th>F16 TFLOPS</th>
+<th>Cost</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Tesla V100</td>
+<td>Volta</td>
+<td>16GB HBM2</td>
+<td>5120</td>
+<td>640</td>
+<td>15.7</td>
+<td>125</td>
+<td>$3.06/hr</td>
+</tr>
+
+<tr>
+<td>Titan V</td>
+<td>Volta</td>
+<td>12GB HBM2</td>
+<td>5120</td>
+<td>640</td>
+<td>15</td>
+<td>110*</td>
+<td>$2999</td>
+</tr>
+
+<tr>
+<td>1080 Ti</td>
+<td>Pascal</td>
+<td>11GB GDDR5</td>
+<td>3584</td>
+<td>0</td>
+<td>11</td>
+<td>N/A</td>
+<td>$699</td>
+</tr>
+</tbody>
+</table>
+
+<p></center></p>
+
+<p>The benchmark below is taken from <a href="https://lambdalabs.com/blog/best-gpu-tensorflow-2080-ti-vs-v100-vs-titan-v-vs-1080-ti-benchmark/">Lambda Lab Benchmark</a>. Values represent the speed-up-against-1080ti/$1000 (F32). Again, for my use case this number should be much lower, since the GPU is not very well utilized.</p>
+
+<p><center></p>
+
+<table>
+<thead>
+<tr>
+<th>Model/GPU</th>
+<th>2080 Ti</th>
+<th>Titan V</th>
+<th>V100</th>
+<th>1080 Ti</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Price Per GPU (k$)</td>
+<td>1.2</td>
+<td>3</td>
+<td>9.8</td>
+<td>0.7</td>
+</tr>
+
+<tr>
+<td>Price Per 1 GPU System (k$)</td>
+<td>2.49</td>
+<td>4.29</td>
+<td>11.09</td>
+<td>1.99</td>
+</tr>
+
+<tr>
+<td>AVG</td>
+<td>0.55</td>
+<td>0.33</td>
+<td>0.16</td>
+<td>0.5</td>
+</tr>
+
+<tr>
+<td>ResNet-50</td>
+<td>0.56</td>
+<td>0.34</td>
+<td>0.16</td>
+<td>0.5</td>
+</tr>
+
+<tr>
+<td>ResNet-152</td>
+<td>0.53</td>
+<td>0.31</td>
+<td>0.14</td>
+<td>0.5</td>
+</tr>
+
+<tr>
+<td>InceptionV3</td>
+<td>0.58</td>
+<td>0.37</td>
+<td>0.17</td>
+<td>0.5</td>
+</tr>
+
+<tr>
+<td>InceptionV4</td>
+<td>0.57</td>
+<td>0.32</td>
+<td>0.14</td>
+<td>0.5</td>
+</tr>
+
+<tr>
+<td>VGG16</td>
+<td>0.51</td>
+<td>0.33</td>
+<td>0.16</td>
+<td>0.5</td>
+</tr>
+
+<tr>
+<td>AlexNet</td>
+<td>0.52</td>
+<td>0.32</td>
+<td>0.16</td>
+<td>0.5</td>
+</tr>
+
+<tr>
+<td>SSD300</td>
+<td>0.55</td>
+<td>0.33</td>
+<td>0.16</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+
+<p></center></p>
+
+<p>Then I came across the PC build of the <a href="https://pcpartpicker.com/list/mXFJd6">Lambda Lab build</a> and a customized build by <a href="https://ca.pcpartpicker.com/b/b9KBD3">kylemcdonald</a> on <a href="pcpartpicker.com">pcpartpicker.com</a>. I combine them as below:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>CPU</td>
+<td>Intel - Core i7-6850K 3.6 GHz 6-Core Processor</td>
+<td>$863.99</td>
+</tr>
+
+<tr>
+<td>CPU Cooler</td>
+<td>Intel - BXTS13A CPU Cooler</td>
+<td>$21</td>
+</tr>
+
+<tr>
+<td>Motherboard</td>
+<td>Asus - X99-E WS/USB 3.1 SSI CEB LGA2011-3 Motherboard</td>
+<td>$680.84</td>
+</tr>
+
+<tr>
+<td>Memory</td>
+<td>Corsair - Vengeance LPX 64 GB (4 x 16 GB) DDR4-2666 Memory</td>
+<td>$612</td>
+</tr>
+
+<tr>
+<td>Storage</td>
+<td>Crucial - MX300 1.05 TB 2.5&rdquo; Solid State Drive</td>
+<td>$341.99</td>
+</tr>
+
+<tr>
+<td>Video Card</td>
+<td>PNY 1080 T​i Founders​ Edition (or any blower-style 1080ti)</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>PNY 1080 T​i Founders​ Edition (or any blower-style 1080ti)</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>PNY 1080 T​i Founders​ Edition (or any blower-style 1080ti)</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>PNY 1080 T​i Founders​ Edition (or any blower-style 1080ti)</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Case</td>
+<td>Corsair - Carbide 400Q ATX Mid Tower Case</td>
+<td>$164.74</td>
+</tr>
+
+<tr>
+<td>Case</td>
+<td>Carbide Se​ries® Air ​540 Arctic​ Black</td>
+<td>$169.99</td>
+</tr>
+
+<tr>
+<td>Power Supply</td>
+<td>EVGA - SuperNOVA P2 1600 W 80+ Platinum Certified Fully-Modular ATX Power Supply</td>
+<td>$347</td>
+</tr>
+
+<tr>
+<td>Total</td>
+<td></td>
+<td>$3,201.55</td>
+</tr>
+</tbody>
+</table>
+
+<p>The total price above does not include the GPUs. The price of 1080ti varies depending on where you want to get one.
+I will probably get those from e-Bay, so the cost can be significantly lower.
+Based on the reviews, GPUs from e-Bay work fairly well for reasonable price.
+Of course one needs to be cautious with those offers that are too good to be true.</p>
+
+<p>Any 1080ti version that comes with a blower style thermal solution should be compatible:</p>
+
+<figure>
+    <img src="./1080ti.png"
+         alt="image"/> <figcaption>
+            <p>Asus GTX 1080ti Turbo</p>
+        </figcaption>
+</figure>
+
+
+<p>The above setup is versatile, it can fit other NV-brand GPUs.
+So I can upgrade my GPU later on.
+That&rsquo;s why I still use brand-new parts for the other components.</p>
+
+<p>It is noted that the CPU supports 40 PCIe lanes. Even though there will require 4*16 lanes for four GPUs,
+the motherboard comes with a PLX switch that can simulate 16 lanes for each GPU.
+So one can avoid the wired <code>16x8x8x8</code> setups.
+However, <strong><em>the maximum bandwidth still limits to 40 lanes at the same moment</em></strong>.
+This would be problematic for data parallelization, since we need to wait for the slowest GPU to finish before moving on the next step.
+This problem cannot be fixed without a budget &lt; $20,000 (we need two CPUs).
+For now I will just ignore this issue.</p>
+
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- end Contact Area -->
+<footer id="footer" class="bg-one">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-xl-12">
+
+				<!-- Footer Social Links -->
+				
+
+				<!-- copyright -->
+				<div class="copyright text-center">
+					<a href="https://l1nna.com/">
+						<img src="https://l1nna.com/images/logo_ls.png" alt="Meghna" />
+					</a>
+					<br>
+
+					<p>Design And Developed by <a href="https://l1nna.com/">  Steven. Powered by the theme from the Themefisher Team  </a>. Copyright &copy; <script>
+							document.write(new Date().getFullYear())
+						</script>. All Rights Reserved.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Essential Scripts -->
+
+		<!-- Main jQuery -->
+		<script type="text/javascript" src="https://l1nna.com/plugins/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap 4.3 + Popper -->
+		<script type="text/javascript" src="https://l1nna.com/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Slick Carousel -->
+		<script type="text/javascript" src="https://l1nna.com/plugins/slick-carousel/slick/slick.min.js"></script>
+		<!-- Portfolio Filtering -->
+		<script type="text/javascript" src="https://l1nna.com/plugins/mixitup/mixitup.min.js"></script>
+		<!-- Magnific popup -->
+		<script type="text/javascript" src="https://l1nna.com/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+		<!-- Google Map API -->
+		<script type="text/javascript"  src="https://l1nna.com/"></script>
+		<!-- Number Counter Script -->
+		<script type="text/javascript" src="https://l1nna.com/plugins/count-to/jquery.countTo.js"></script>
+		<!-- wow.min Script -->
+		<script type="text/javascript" src="https://l1nna.com/plugins/wow/dist/wow.min.js"></script>
+		<!-- Scroll behavior polyfill -->
+		
+		<script src="https://l1nna.com/js/scroll-behavior-polyfill.min.js"></script>
+		<!-- Sweet Alert -->
+		<script type="text/javascript" src="https://l1nna.com/plugins/sweet-alert/sweetalert.min.js"></script>
+		<!-- Custom js -->
+		
+		<script src="https://l1nna.com/js/script.min.js"></script>
+		<!-- google analitycs -->
+		<script>
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				ga('create', 'Your ID', 'auto');
+				ga('send', 'pageview');
+		</script>
+
+    </body>
+</html></body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on L1NNA</title>
+    <link>https://l1nna.com/tags/hardware/</link>
+    <description>Recent content in Hardware on L1NNA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://l1nna.com/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deep Learning Server Budget Build</title>
+      <link>https://l1nna.com/post/deep-learning-hardware/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/post/deep-learning-hardware/</guid>
+      <description>I was looking for a budget build workstation for deep learning model training.</description>
+    </item>
+    
+  </channel>
+</rss>
