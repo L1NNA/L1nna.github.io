@@ -83,19 +83,24 @@
 <!-- End Fixed Navigation -->
 
 
-<section class="section bg-1-c bg-1-c-d overly" >
+<section class="section bg-1-c bg-1-c-d overly single-post-default">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 text-center single-post-header">
-                <h1>IEEE Xplore PDF Check - Missing Fonts</h1>
-                <ul class="list-inline mb-50">
-                    <li class="list-inline-item"><a href="/author/steven">Steven</a></li>
-                    <li class="list-inline-item">Monday, Jan 1, 0001</li>
-                </ul>
-                <img class="img-fluid mb-50" src="https://l1nna.com/images/blog/blog-post-1.jpg" alt="blog-image">
+            <div class="col-lg-8 offset-lg-2 text-center single-post-header course-block  wow fadeInLeft" data-wow-duration="1000ms"
+                style="background-image: url(https://picsum.photos/1024/400/?image=1073)">
+                <div class="caption">
+                    <h1>IEEE Xplore PDF Check - Missing Fonts</h1>
+                                        <h5>Embedding fonts using preflight.</h5>
+                    <ul class="list-inline mb-50">
+                        <li class="list-inline-item"><a
+                                href="/author/steven">Steven</a></li>
+                        <li class="list-inline-item">Monday, Jan 1, 0001</li>
+                    </ul>
+                </div>
+                
             </div>
             <div class="col-lg-8 offset-lg-2">
-                <div class="post-single-content default bg-two">
+                <div class="post-single-content default bg-one  wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="100ms">
                     <p>We got a notification last week that our recent paper did not pass the IEEE Xplore compliance check. After some investigations, we found that our paper is missing several system-wise fonts. They are not included in the PDF file. The cause is obvious because we directly include pre-generated PDF figures in the paper. Those figures are generated using R-Studio and Microsoft Visio. We didn&rsquo;t specify the font embedding option when saving it.</p>
 
 <p>Generating the figures again is difficult and cannot guarantee the same layout, size, and consistency, since we edit the title etc. directly on the PDF figures. Therefore we need a solution to embed fonts without re-generating the figures. One approach is to use the Acrobat PDF printer, it can embed all the fonts again. However, it distorts some of the layouts and background pattern. After trying different options for the whole morning, it still does not work as we expected. Then we seek for an alternative way to minimally modify the PDF figures. We use the <code>preflight</code> tool in Acrobat reader. Here are the necessary steps:</p>

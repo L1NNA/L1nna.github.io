@@ -28,6 +28,16 @@
   </url>
   
   <url>
+    <loc>https://l1nna.com/post/ggplot-notes/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/post/sklean-xgboost/</loc>
+    <lastmod>2016-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://l1nna.com/author/jamica-jock/</loc>
   </url>
   
@@ -89,12 +99,27 @@
   </url>
   
   <url>
+    <loc>https://l1nna.com/post/idaapi-notes/</loc>
+  </url>
+  
+  <url>
     <loc>https://l1nna.com/post/xplor-check-missing-font/</loc>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/ida/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://l1nna.com/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/machine-learning/</loc>
+    <lastmod>2016-05-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -116,6 +141,34 @@
   </url>
   
   <url>
+    <loc>https://l1nna.com/tags/python/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/r/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/reverse-engineering/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/sklean/</loc>
+    <lastmod>2016-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/statistics/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://l1nna.com/author/steven/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -129,6 +182,13 @@
   
   <url>
     <loc>https://l1nna.com/tags/writing/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/xgboost/</loc>
+    <lastmod>2016-05-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-us" scroll-behavior="smooth"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="L1NNA Research Laboratory">
-    <meta name="author" content="Steven Ding">
+    <meta name="description" content="IDAAPI quick reference notes">
+    <meta name="author" content="Steven">
 
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.53" />
 
-    <title>Deeplearning</title>
+    <title>IDAAPI Notes | Posts</title>
 
 
     <!-- Favicon -->
@@ -83,34 +83,51 @@
 <!-- End Fixed Navigation -->
 
 
-<!-- Start Blog Section -->
-<section id="blog" class="section">
-    <div class="container">
+<section class="section bg-1-c bg-1-c-d overly single-post-default">
+    <div class="container-fluid">
         <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center single-post-header course-block  wow fadeInLeft" data-wow-duration="1000ms"
+                style="background-image: url(https://picsum.photos/1024/400/?image=1078)">
+                <div class="caption">
+                    <h1>IDAAPI Notes</h1>
+                                        <h5>IDAAPI quick reference notes</h5>
+                    <ul class="list-inline mb-50">
+                        <li class="list-inline-item"><a
+                                href="/author/steven">Steven</a></li>
+                        <li class="list-inline-item">Monday, Jan 1, 0001</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="col-lg-8 offset-lg-2">
+                <div class="post-single-content default bg-one  wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="100ms">
+                    
 
-            
-            <!-- single blog post -->
-            
-<article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-    <div class="post-block">
-        <div class="media-wrapper">
-            <img src="https://picsum.photos/1024/400/?image=1075" alt="post-image" class="img-fluid">
-        </div>
+<h2 id="force-creation-of-an-assembly-function">Force creation of an assembly function:</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># get address from unstripped file</span>
+<span class="k">def</span> <span class="nf">check</span><span class="p">():</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">idaapi</span><span class="o">.</span><span class="n">get_func</span><span class="p">(</span><span class="n">ScreenEA</span><span class="p">())</span>
+    <span class="k">print</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">startEA</span><span class="p">),</span> <span class="nb">hex</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">endEA</span><span class="p">)]</span>
 
-        <div class="content">
-            <h3><a href="https://l1nna.com/post/deep-learning-hardware/">Deep Learning Server Budget Build</a></h3>
-            <p>I was looking for a budget build workstation for deep learning model training.</p>
-            <a class="btn btn-transparent" href="https://l1nna.com/post/deep-learning-hardware/">Read more</a>
-        </div>
-    </div>
-</article>
+<span class="c1"># create function in stripped file</span>
+<span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">ea_start</span><span class="p">,</span> <span class="n">ea_end</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">addr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ea_start</span><span class="p">,</span> <span class="n">ea_end</span><span class="p">):</span> 
+        <span class="n">idaapi</span><span class="o">.</span><span class="n">create_insn</span><span class="p">(</span><span class="n">addr</span><span class="p">)</span>
+    <span class="n">MakeFunction</span><span class="p">(</span><span class="n">ea_start</span><span class="p">,</span> <span class="n">ea_end</span><span class="p">)</span></code></pre></div>
+<h2 id="remove-stack-reference-name-in-current-function">Remove stack reference name in current function:</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">unstack</span><span class="p">():</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">idaapi</span><span class="o">.</span><span class="n">get_func</span><span class="p">(</span><span class="n">ScreenEA</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">addr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">startEA</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">endEA</span><span class="p">):</span> 
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+            <span class="n">idc</span><span class="o">.</span><span class="n">OpOff</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span></code></pre></div>
+                    
+                    
 
-            <!-- /single blog post -->
-            
+                </div>
+            </div>
         </div>
     </div>
 </section>
-<!-- /blog -->
 
 
         </div><!-- end Contact Area -->

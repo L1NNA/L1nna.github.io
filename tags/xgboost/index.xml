@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xgboost on L1NNA</title>
+    <link>https://l1nna.com/tags/xgboost/</link>
+    <description>Recent content in Xgboost on L1NNA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 May 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://l1nna.com/tags/xgboost/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sklean&#43;Xgboost Cross Validation with Grid Search Tuning</title>
+      <link>https://l1nna.com/post/sklean-xgboost/</link>
+      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/post/sklean-xgboost/</guid>
+      <description>This note illustrates an example using Xgboost with Sklean to tune the parameter using cross-validation.</description>
+    </item>
+    
+  </channel>
+</rss>

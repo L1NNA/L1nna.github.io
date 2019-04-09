@@ -21,6 +21,33 @@
     </item>
     
     <item>
+      <title>R-ggplot Notes</title>
+      <link>https://l1nna.com/post/ggplot-notes/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/post/ggplot-notes/</guid>
+      <description>Multiplot multiplot &amp;lt;- function(..., plotlist=NULL, file, cols=1, layout=NULL) { require(grid) # Make a list from the .</description>
+    </item>
+    
+    <item>
+      <title>Sklean&#43;Xgboost Cross Validation with Grid Search Tuning</title>
+      <link>https://l1nna.com/post/sklean-xgboost/</link>
+      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/post/sklean-xgboost/</guid>
+      <description>This note illustrates an example using Xgboost with Sklean to tune the parameter using cross-validation.</description>
+    </item>
+    
+    <item>
+      <title>IDAAPI Notes</title>
+      <link>https://l1nna.com/post/idaapi-notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/post/idaapi-notes/</guid>
+      <description>Force creation of an assembly function: # get address from unstripped file def check(): f = idaapi.</description>
+    </item>
+    
+    <item>
       <title>IEEE Xplore PDF Check - Missing Fonts</title>
       <link>https://l1nna.com/post/xplor-check-missing-font/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
