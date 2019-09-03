@@ -110,6 +110,7 @@ window.formatGoogleCalendar = (() => {
             pastElem.insertAdjacentHTML('beforebegin', settings.pastHeading);
         }
 
+        var keyword_format = ['*summary*', ' ', '*date*', '*location*', '*description*' , '<br/>']
         for (j in settings.keywords) {
             var kw = settings.keywords[j];
             var holder = $(`#${settings.keywordPrefix}-${kw}-content`);
@@ -120,7 +121,7 @@ window.formatGoogleCalendar = (() => {
                         var div = transformationList(
                             k_event,
                             'div',
-                            settings.subEventFormat,
+                            keyword_format,
                             'e-rest',
                             'circle-compass',
                             true);
@@ -249,21 +250,26 @@ window.formatGoogleCalendar = (() => {
                 output = output.concat(`<h4 class="summary ${cls}"><i class="tf-${icon}"></i>${summary}</h4>`);
             } else if (format[i] === '*date*') {
                 output = output.concat(`<h6 class="date">${dateFormatted}</h6>`);
+            } else if (format[i] === '*date* *location*') {
+                output = output.concat(`<h6 class="date">${dateFormatted} [ <i class="tf-map-pin"></i><a target='_blank' href="http://maps.google.com/?q=${location}">${location}</a> ]</h6>`);
             } else if (format[i] === '*description*') {
-                if (!isSubEvent)
+                if (!isSubEvent) {
                     output = output.concat(`<h6 class="description-handle">Show/hide details</h6>`)
-                output = output.concat(`<div class="description">${description}</div>`);
+                    output = output.concat(`<div class="description">${description}</div>`);
+                } else
+                    output = output.concat(`<div class="description">Details: ${description}</div>`);
             } else if (format[i] === '*location*') {
                 if (location.length > 0)
                     output = output.concat(`<h6 class="location small"><i class="tf-map-pin"></i><a target='_blank' href="http://maps.google.com/?q=${location}">${location}</a></h6>`);
             } else {
-                if ((format[i + 1] === '*location*' && location !== '') ||
-                    (format[i + 1] === '*summary*' && summary !== '') ||
-                    (format[i + 1] === '*date*' && dateFormatted !== '') ||
-                    (format[i + 1] === '*description*' && description !== '')) {
+                // if ((format[i + 1] === '*location*' && location !== '') ||
+                //     (format[i + 1] === '*summary*' && summary !== '') ||
+                //     (format[i + 1] === '*date*' && dateFormatted !== '') ||
+                //     (format[i + 1] === '*description*' && description !== '')) {
 
+                //     output = output.concat(format[i]);
+                // }
                     output = output.concat(format[i]);
-                }
             }
         }
 
