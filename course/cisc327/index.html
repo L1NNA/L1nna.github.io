@@ -86,6 +86,29 @@
 <!-- Main jQuery -->
 <script type="text/javascript" src="https://l1nna.com/plugins/gcal/api.js"></script>
 
+<style>
+td, th {
+        border-bottom: 1px groove #c7c8cb;
+        border-top: 1px groove #c7c8cb;
+        padding-left:20px;
+}
+
+table{
+    background-color: rgba(0, 0, 0, .486);
+    padding: 20px;
+    font-size: 10pt;
+    width: 100%;
+}
+
+img{
+    background-color: rgba(0, 0, 0, .486);
+    width:100%;
+}
+
+center{
+    overflow-x: auto;
+}
+</style>
 <section class="section bg-1-c bg-1-c-d single-course overly">
     <div class="container-fluid extra">
         <div class="row">
@@ -122,6 +145,72 @@
 
 <p><strong><em>Lectures, schedules, and locations.</em></strong> See the full calendar events and lecture details below. All the information below is generated based on a Google calendar in real-time. If you like to use a calendar application to manage your time, you can directly subscribe through Google Calendar by clicking <a href="http://www.google.com/calendar/render?cid=h5h6ge65ppudd59k87htlcf68g@group.calendar.google.com" title="subscribe to CISC/CMPE 327 (Google Calendar)" target="_blank"><strong><em>here</em></strong></a>, or through any other calendar application that supports the iCal link <a href="https://calendar.google.com/calendar/ical/h5h6ge65ppudd59k87htlcf68g%40group.calendar.google.com/public/basic.ics" title="subscribe to CISC/CMPE 327 (iCal format for e.g. Outlook)" target="_blank"><strong><em>here</em></strong></a>. Please note that for some calendar applications there may be delays when synchronizing event changes. OnQ use will be minimal. <strong>Schedule subject to change as the course progresses.</strong></p>
 
+<table class="tg" id="Reference">
+  <tr>
+    <th class="tg-0pky" rowspan="3">Command Line Programming</th>
+    <th class="tg-0pky">University of Edinburgh Unix Guide</th>
+    <th class="tg-0pky">The University of Edinburgh guide to the Unix command line programming environment.</th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Infionline Windows Batch Command Line Programming Guide</td>
+    <td class="tg-0pky">The Infionline guide to MS-DOS (Windows) command line script programming, by Terry Newton.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Unix/Linux bash Shell Scripting Tutorial</td>
+    <td class="tg-0pky">Steve Parker's online guide to Bourne shell / Bash shell scripting.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" rowspan="6">Reference Books</td>
+    <td class="tg-0pky">Kan, Metrics and Models in Software Quality Engineering, Addison Wesley 1995.</td>
+    <td class="tg-0pky">General reference on traditional software models, quality and metrics.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Gilb &amp; Graham, Software Inspection, Addison Wesley 1993.</td>
+    <td class="tg-0pky">Reference on traditional software inspection.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Sommerville, Software Engineering, Addison Wesley 1996.</td>
+    <td class="tg-0pky">General reference on software engineering processes and procedures.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Succi &amp; Marchesi, eXtreme Programming Examined,Addison Wesley 2000.</td>
+    <td class="tg-0pky"></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Wake, eXtreme Programming Explored, Addison Wesley 2000.</td>
+    <td class="tg-0pky">Additional references on eXtreme Programming ideas and methods.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Jeffries, Anderson &amp; Hendrikson, eXtreme Programming Installed, Addison Wesley 2000.</td>
+    <td class="tg-0pky"></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" rowspan="6">Software Quality Web Sites</td>
+    <td class="tg-0pky">CompInfo Software Testing and Quality Control Page</td>
+    <td class="tg-0pky">Software testing and quality links aimed at industrial Information Technology (IT) professionals.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Software Quality Assurance History and Definitions</td>
+    <td class="tg-0pky">Software Quality Assurance history and definitions page.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">NASA Software Quality Assurance Page</td>
+    <td class="tg-0pky">The NASA Software Quality Assurance website, with standards, procedures and checklists used at NASA.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Workshop on Inspection in Software Engineering</td>
+    <td class="tg-0pky">The proceedings of WISE'01, the first international workshop on software inspection, from McMaster University.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">International Standards Organization standard 90003 (IEC ISO 90003 2004)</td>
+    <td class="tg-0pky">ISO 9000 standard for computer software development and maintenance processes and procedures.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Software Engineering Institute Capability Maturity Model (CMM)</td>
+    <td class="tg-0pky">Maturity questionnaire used in SEI CMM assessments.</td>
+  </tr>
+</table>
+
 
 
                     
@@ -131,7 +220,7 @@
 
                     <script>
                         window.onload = function () {
-                            load_calendar('h5h6ge65ppudd59k87htlcf68g@group.calendar.google.com', 'schedule-holder', '20190904/20190905', ['Assignment', 'Mini-Exam'])
+                            load_calendar('h5h6ge65ppudd59k87htlcf68g@group.calendar.google.com', 'schedule-holder', '20190904/20190905', ['Assignment', 'Mini-Exam'], 'Reference')
                         }
                     </script>
                     
