@@ -110,7 +110,7 @@ window.formatGoogleCalendar = (() => {
             pastElem.insertAdjacentHTML('beforebegin', settings.pastHeading);
         }
 
-        var keyword_format = ['*summary*', ' ', '*date*', '*location*', '*description*' , '<br/>']
+        var keyword_format = ['*summary*', ' ', '*date*', '*location*', '*description*', '<br/>']
         for (j in settings.keywords) {
             var kw = settings.keywords[j];
             var holder = $(`#${settings.keywordPrefix}-${kw}-content`);
@@ -248,6 +248,15 @@ window.formatGoogleCalendar = (() => {
                 if (summary.toLowerCase().indexOf('due') >= 0)
                     cls = 'due';
                 output = output.concat(`<h4 class="summary ${cls}"><i class="tf-${icon}"></i>${summary}</h4>`);
+            } else if (format[i] === '*summary* *details*') {
+                var cls = '';
+                if (summary.toLowerCase().indexOf('exam') >= 0)
+                    cls = 'exam';
+                if (summary.toLowerCase().indexOf('due') >= 0)
+                    cls = 'due';
+                if(description.length > 0)
+                    description = '[' + description + ']';
+                output = output.concat(`<h4 class="summary ${cls}"><i class="tf-${icon}"></i>${summary} <small>${description}</small></h4>`);
             } else if (format[i] === '*date*') {
                 output = output.concat(`<h6 class="date">${dateFormatted}</h6>`);
             } else if (format[i] === '*date* *location*') {
@@ -269,7 +278,7 @@ window.formatGoogleCalendar = (() => {
 
                 //     output = output.concat(format[i]);
                 // }
-                    output = output.concat(format[i]);
+                output = output.concat(format[i]);
             }
         }
 
