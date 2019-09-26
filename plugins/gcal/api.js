@@ -46,7 +46,7 @@ window.formatGoogleCalendar = (() => {
         if (settings.groupByWeek) {
             var groups = {};
             for (i in result) {
-                var date = result[i].start.dateTime || result[i].start.date;
+                var date = (result[i].start.dateTime || result[i].start.date);
                 var week = date2week(date);
                 if (week in groups)
                     groups[week].push(result[i]);
@@ -254,7 +254,7 @@ window.formatGoogleCalendar = (() => {
                     cls = 'exam';
                 if (summary.toLowerCase().indexOf('due') >= 0)
                     cls = 'due';
-                if(description.length > 0)
+                if (description.length > 0)
                     description = '[' + description + ']';
                 output = output.concat(`<h4 class="summary ${cls}"><i class="tf-${icon}"></i>${summary} <small>${description}</small></h4>`);
             } else if (format[i] === '*date*') {
@@ -480,11 +480,32 @@ window.formatGoogleCalendar = (() => {
     };
 
 
-    function date2week(d) {
-        var d = new Date(d);
-        var onejan = new Date(d.getFullYear(), 0, 1);
-        var millisecsInDay = 86400000;
-        return Math.ceil((((d - onejan) / millisecsInDay) + onejan.getDay() + 1) / 7);
+    function date2week(dt) {
+        dt = new Date(dt);
+        var dowOffset = 1;
+        dowOffset = typeof (dowOffset) == 'int' ? dowOffset : 0; //default dowOffset to zero
+        var newYear = new Date(dt.getFullYear(), 0, 1);
+        var day = newYear.getDay() - dowOffset; //the day of week the year begins on
+        day = (day >= 0 ? day : day + 7);
+        var daynum = Math.floor((dt.getTime() - newYear.getTime() -
+            (dt.getTimezoneOffset() - newYear.getTimezoneOffset()) * 60000) / 86400000) + 1;
+        var weeknum;
+        //if the year starts before the middle of a week
+        if (day < 4) {
+            weeknum = Math.floor((daynum + day - 1) / 7) + 1;
+            if (weeknum > 52) {
+                nYear = new Date(dt.getFullYear() + 1, 0, 1);
+                nday = nYear.getDay() - dowOffset;
+                nday = nday >= 0 ? nday : nday + 7;
+                /*if the next year starts before the middle of
+                  the week, it is week #1 of that year*/
+                weeknum = nday < 4 ? 1 : 53;
+            }
+        }
+        else {
+            weeknum = Math.floor((daynum + day - 1) / 7);
+        }
+        return weeknum;
     }
 
     return {
