@@ -3,13 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://l1nna.com/post/deep-learning-hardware/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <loc>https://l1nna.com/project/assembly-code-data-mining/</loc>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://l1nna.com/project/assembly-code-data-mining/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
+    <loc>https://l1nna.com/project/malware-phenotype-analysis/</loc>
+    <lastmod>2019-09-12T14:51:12+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/project/binary-genetic-analysis/</loc>
+    <lastmod>2019-08-12T14:51:12+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/post/deep-learning-hardware/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,7 +53,7 @@
   
   <url>
     <loc>https://l1nna.com/author/john-doe/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
   </url>
   
   <url>
@@ -56,7 +66,7 @@
   
   <url>
     <loc>https://l1nna.com/author/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -117,7 +127,7 @@
   
   <url>
     <loc>https://l1nna.com/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -135,7 +145,7 @@
   
   <url>
     <loc>https://l1nna.com/project/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
     <priority>0</priority>
   </url>
   
