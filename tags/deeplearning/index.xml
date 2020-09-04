@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Deeplearning on L1NNA</title>
+    <title>DeepLearning on L1NNA</title>
     <link>https://l1nna.com/tags/deeplearning/</link>
-    <description>Recent content in Deeplearning on L1NNA</description>
+    <description>Recent content in DeepLearning on L1NNA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>

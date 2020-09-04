@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Courses on L1NNA</title>
@@ -26,6 +26,15 @@
       
       <guid>https://l1nna.com/course/cisc499/</guid>
       <description>Potential course-long projects for CISC/COGS 499. Focus may be on the development of subcomponents of a large system, prototytes of initial research discovery for demonstration, passive/active data collection pipline for threat intelligence, or benchmark experiment on system/solutions for a specific research problem.</description>
+    </item>
+    
+    <item>
+      <title>CISC 873 Data Mining</title>
+      <link>https://l1nna.com/course/cisc873/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/course/cisc873/</guid>
+      <description>Course summary. Study of the extraction of concepts from large high-dimensional datasets.</description>
     </item>
     
     <item>

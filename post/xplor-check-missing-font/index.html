@@ -6,7 +6,7 @@
 
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.74.3" />
 
     <title>IEEE Xplore PDF Check - Missing Fonts | Posts</title>
 
@@ -102,9 +102,7 @@
             <div class="col-lg-8 offset-lg-2">
                 <div class="post-single-content default bg-one  wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="100ms">
                     <p>We got a notification last week that our recent paper did not pass the IEEE Xplore compliance check. After some investigations, we found that our paper is missing several system-wise fonts. They are not included in the PDF file. The cause is obvious because we directly include pre-generated PDF figures in the paper. Those figures are generated using R-Studio and Microsoft Visio. We didn&rsquo;t specify the font embedding option when saving it.</p>
-
 <p>Generating the figures again is difficult and cannot guarantee the same layout, size, and consistency, since we edit the title etc. directly on the PDF figures. Therefore we need a solution to embed fonts without re-generating the figures. One approach is to use the Acrobat PDF printer, it can embed all the fonts again. However, it distorts some of the layouts and background pattern. After trying different options for the whole morning, it still does not work as we expected. Then we seek for an alternative way to minimally modify the PDF figures. We use the <code>preflight</code> tool in Acrobat reader. Here are the necessary steps:</p>
-
 <ul>
 <li>Open Adobe Acrobat.</li>
 <li>Ctrl+D open property panel.</li>
@@ -114,9 +112,7 @@
 <li>Lookup and select PDF fixups -&gt; embed missing fonts.</li>
 <li>Click <code>analyze</code>, and save the new file.</li>
 </ul>
-
 <p>Simple! But it takes me the whole morning to figure out! The great advantage is that it does minimal update to the original PDF, unlike other re-rendering approaches.</p>
-
 <p>Ref:
 <a href="https://www.ieee.org/publications/authors/pdf_checker.html">IEEE Xplore Compliance Online Verification</a></p>
 

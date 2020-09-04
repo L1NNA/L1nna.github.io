@@ -6,7 +6,7 @@
 
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.74.3" />
 
     <title>R-ggplot Notes | Posts</title>
 
@@ -101,77 +101,76 @@
             </div>
             <div class="col-lg-8 offset-lg-2">
                 <div class="post-single-content default bg-one  wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="100ms">
-                    
-
-<h3 id="multiplot">Multiplot</h3>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R">multiplot <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span> plotlist<span class="o">=</span><span class="kc">NULL</span><span class="p">,</span> <span class="kp">file</span><span class="p">,</span> cols<span class="o">=</span><span class="m">1</span><span class="p">,</span> layout<span class="o">=</span><span class="kc">NULL</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kn">require</span><span class="p">(</span>grid<span class="p">)</span>
+                    <h3 id="multiplot">Multiplot</h3>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">multiplot</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span> <span class="n">plotlist</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="kc">NULL</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">require</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
   
   <span class="c1"># Make a list from the ... arguments and plotlist</span>
-  plots <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="kt">list</span><span class="p">(</span><span class="kc">...</span><span class="p">),</span> plotlist<span class="p">)</span>
+  <span class="n">plots</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="kc">...</span><span class="p">),</span> <span class="n">plotlist</span><span class="p">)</span>
   
-  numPlots <span class="o">=</span> <span class="kp">length</span><span class="p">(</span>plots<span class="p">)</span>
+  <span class="n">numPlots</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">plots</span><span class="p">)</span>
   
   <span class="c1"># If layout is NULL, then use &#39;cols&#39; to determine layout</span>
-  <span class="kr">if</span> <span class="p">(</span><span class="kp">is.null</span><span class="p">(</span>layout<span class="p">))</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nf">is.null</span><span class="p">(</span><span class="n">layout</span><span class="p">))</span> <span class="p">{</span>
     <span class="c1"># Make the panel</span>
     <span class="c1"># ncol: Number of columns of plots</span>
     <span class="c1"># nrow: Number of rows needed, calculated from # of cols</span>
-    layout <span class="o">&lt;-</span> <span class="kt">matrix</span><span class="p">(</span><span class="kp">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> cols <span class="o">*</span> <span class="kp">ceiling</span><span class="p">(</span>numPlots<span class="o">/</span>cols<span class="p">)),</span>
-                     ncol <span class="o">=</span> cols<span class="p">,</span> nrow <span class="o">=</span> <span class="kp">ceiling</span><span class="p">(</span>numPlots<span class="o">/</span>cols<span class="p">))</span>
+    <span class="n">layout</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">cols</span> <span class="o">*</span> <span class="nf">ceiling</span><span class="p">(</span><span class="n">numPlots</span><span class="o">/</span><span class="n">cols</span><span class="p">)),</span>
+                     <span class="n">ncol</span> <span class="o">=</span> <span class="n">cols</span><span class="p">,</span> <span class="n">nrow</span> <span class="o">=</span> <span class="nf">ceiling</span><span class="p">(</span><span class="n">numPlots</span><span class="o">/</span><span class="n">cols</span><span class="p">))</span>
   <span class="p">}</span>
   
-  <span class="kr">if</span> <span class="p">(</span>numPlots<span class="o">==</span><span class="m">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kp">print</span><span class="p">(</span>plots<span class="p">[[</span><span class="m">1</span><span class="p">]])</span>
+  <span class="nf">if </span><span class="p">(</span><span class="n">numPlots</span><span class="o">==</span><span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">plots[[1]]</span><span class="p">)</span>
     
-  <span class="p">}</span> <span class="kr">else</span> <span class="p">{</span>
+  <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
     <span class="c1"># Set up the page</span>
-    grid.newpage<span class="p">()</span>
-    pushViewport<span class="p">(</span>viewport<span class="p">(</span>layout <span class="o">=</span> grid.layout<span class="p">(</span><span class="kp">nrow</span><span class="p">(</span>layout<span class="p">),</span> <span class="kp">ncol</span><span class="p">(</span>layout<span class="p">))))</span>
+    <span class="nf">grid.newpage</span><span class="p">()</span>
+    <span class="nf">pushViewport</span><span class="p">(</span><span class="nf">viewport</span><span class="p">(</span><span class="n">layout</span> <span class="o">=</span> <span class="nf">grid.layout</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">layout</span><span class="p">),</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">layout</span><span class="p">))))</span>
     
     <span class="c1"># Make each plot, in the correct location</span>
-    <span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>numPlots<span class="p">)</span> <span class="p">{</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">numPlots</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1"># Get the i,j matrix positions of the regions that contain this subplot</span>
-      matchidx <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">which</span><span class="p">(</span>layout <span class="o">==</span> i<span class="p">,</span> arr.ind <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
+      <span class="n">matchidx</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">which</span><span class="p">(</span><span class="n">layout</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="n">arr.ind</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
       
-      <span class="kp">print</span><span class="p">(</span>plots<span class="p">[[</span>i<span class="p">]],</span> vp <span class="o">=</span> viewport<span class="p">(</span>layout.pos.row <span class="o">=</span> matchidx<span class="o">$</span><span class="kp">row</span><span class="p">,</span>
-                                      layout.pos.col <span class="o">=</span> matchidx<span class="o">$</span><span class="kp">col</span><span class="p">))</span>
+      <span class="nf">print</span><span class="p">(</span><span class="n">plots[[i]]</span><span class="p">,</span> <span class="n">vp</span> <span class="o">=</span> <span class="nf">viewport</span><span class="p">(</span><span class="n">layout.pos.row</span> <span class="o">=</span> <span class="n">matchidx</span><span class="o">$</span><span class="n">row</span><span class="p">,</span>
+                                      <span class="n">layout.pos.col</span> <span class="o">=</span> <span class="n">matchidx</span><span class="o">$</span><span class="n">col</span><span class="p">))</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="density-histogram-cdf">Density, Histogram &amp; CDF</h3>
+<span class="p">}</span>
 
+</code></pre></div><h3 id="density-histogram--cdf">Density, Histogram &amp; CDF</h3>
 <p><a href="http://www.sthda.com/english/wiki/ggplot2-density-plot-quick-start-guide-r-software-and-data-visualization">Colors and Styles</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">);</span><span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
-f1<span class="o">=</span><span class="s">&#34;O0-O3_ins_stat.txt&#34;</span>
-f2<span class="o">=</span><span class="s">&#34;O2-O3_ins_stat.txt&#34;</span>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">);</span><span class="nf">library</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
+<span class="n">f1</span><span class="o">=</span><span class="s">&#34;O0-O3_ins_stat.txt&#34;</span>
+<span class="n">f2</span><span class="o">=</span><span class="s">&#34;O2-O3_ins_stat.txt&#34;</span>
   
-read.table<span class="p">(</span>f1<span class="p">,</span> header<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="o">-&gt;</span> d1
-read.table<span class="p">(</span>f2<span class="p">,</span> header<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="o">-&gt;</span> d2
+<span class="nf">read.table</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">d1</span>
+<span class="nf">read.table</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">d2</span>
 
-rc <span class="o">=</span>  <span class="kp">min</span><span class="p">(</span><span class="kp">nrow</span><span class="p">(</span>d1<span class="p">),</span> <span class="kp">nrow</span><span class="p">(</span>d2<span class="p">))</span>
-x <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>v1<span class="o">=</span>d1<span class="p">[</span><span class="m">0</span><span class="o">:</span>rc<span class="p">,],</span>v2<span class="o">=</span>d2<span class="p">[</span><span class="m">0</span><span class="o">:</span>rc<span class="p">,])</span>
-data<span class="o">&lt;-</span> melt<span class="p">(</span>x<span class="p">)</span>
-m1 <span class="o">&lt;-</span> ggplot<span class="p">(</span>data<span class="p">,</span>aes<span class="p">(</span>x<span class="o">=</span>value<span class="p">,</span> fill<span class="o">=</span>variable<span class="p">))</span> <span class="o">+</span> geom_density<span class="p">(</span>alpha<span class="o">=</span><span class="m">0.25</span><span class="p">)</span>    <span class="o">+</span>  theme_bw<span class="p">()</span> <span class="o">+</span> xlim<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">500</span><span class="p">)</span>
-m2 <span class="o">&lt;-</span> ggplot<span class="p">(</span>data<span class="p">,</span>aes<span class="p">(</span>x<span class="o">=</span>value<span class="p">,</span> fill<span class="o">=</span>variable<span class="p">))</span> <span class="o">+</span> geom_histogram<span class="p">(</span>alpha<span class="o">=</span><span class="m">0.25</span><span class="p">)</span>  <span class="o">+</span>  theme_bw<span class="p">()</span> <span class="o">+</span> xlim<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">500</span><span class="p">)</span>
-m3 <span class="o">&lt;-</span> ggplot<span class="p">(</span>data<span class="p">,</span>aes<span class="p">(</span>x<span class="o">=</span>variable<span class="p">,</span> y<span class="o">=</span>value<span class="p">))</span> <span class="o">+</span> geom_boxplot<span class="p">()</span>                 <span class="o">+</span>  theme_bw<span class="p">()</span> <span class="o">+</span> xlim<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">500</span><span class="p">)</span>
-m4 <span class="o">&lt;-</span> ggplot<span class="p">(</span>data<span class="p">,</span>aes<span class="p">(</span>x<span class="o">=</span>value<span class="p">,</span> color<span class="o">=</span>vvariable<span class="p">))</span> <span class="o">+</span> stat_ecdf<span class="p">(</span>geom <span class="o">=</span> <span class="s">&#34;point&#34;</span><span class="p">,</span> size<span class="o">=</span><span class="m">1</span><span class="p">,</span> alpha<span class="o">=</span><span class="m">0.3</span><span class="p">)</span>  <span class="o">+</span>  theme_bw<span class="p">()</span> <span class="o">+</span> xlim<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">500</span><span class="p">)</span>
+<span class="n">rc</span> <span class="o">=</span>  <span class="nf">min</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">d1</span><span class="p">),</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">d2</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">v1</span><span class="o">=</span><span class="n">d1[0</span><span class="o">:</span><span class="n">rc</span><span class="p">,</span><span class="n">]</span><span class="p">,</span><span class="n">v2</span><span class="o">=</span><span class="n">d2[0</span><span class="o">:</span><span class="n">rc</span><span class="p">,</span><span class="n">]</span><span class="p">)</span>
+<span class="n">data</span><span class="o">&lt;-</span> <span class="nf">melt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">m1</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">variable</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_density</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.25</span><span class="p">)</span>    <span class="o">+</span>  <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">500</span><span class="p">)</span>
+<span class="n">m2</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">variable</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_histogram</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.25</span><span class="p">)</span>  <span class="o">+</span>  <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">500</span><span class="p">)</span>
+<span class="n">m3</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_boxplot</span><span class="p">()</span>                 <span class="o">+</span>  <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">500</span><span class="p">)</span>
+<span class="n">m4</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">vvariable</span><span class="p">))</span> <span class="o">+</span> <span class="nf">stat_ecdf</span><span class="p">(</span><span class="n">geom</span> <span class="o">=</span> <span class="s">&#34;point&#34;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="m">0.3</span><span class="p">)</span>  <span class="o">+</span>  <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">500</span><span class="p">)</span>
 
-multiplot<span class="p">(</span>m1<span class="p">,</span> m2<span class="p">,</span> m3<span class="p">,</span> m4<span class="p">,</span> cols <span class="o">=</span> <span class="m">4</span><span class="p">)</span></code></pre></div>
-<h3 id="two-sample-kolmogorov-smirnov-test">Two-sample Kolmogorov-Smirnov test</h3>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R">f1<span class="o">=</span><span class="s">&#34;fps.txt&#34;</span>
-f2<span class="o">=</span><span class="s">&#34;fps_prio.txt&#34;</span>
+<span class="nf">multiplot</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">m3</span><span class="p">,</span> <span class="n">m4</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+</code></pre></div><h3 id="two-sample-kolmogorov-smirnov-test">Two-sample Kolmogorov-Smirnov test</h3>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">f1</span><span class="o">=</span><span class="s">&#34;fps.txt&#34;</span>
+<span class="n">f2</span><span class="o">=</span><span class="s">&#34;fps_prio.txt&#34;</span>
 
-read.table<span class="p">(</span>f1<span class="p">,</span> header<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="o">-&gt;</span> d1
-read.table<span class="p">(</span>f2<span class="p">,</span> header<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="o">-&gt;</span> d2
+<span class="nf">read.table</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">d1</span>
+<span class="nf">read.table</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">d2</span>
 
-<span class="kp">print</span><span class="p">(</span><span class="kp">summary</span><span class="p">(</span>d1<span class="o">$</span>V1<span class="p">))</span>
-<span class="kp">print</span><span class="p">(</span>sd<span class="p">(</span>d1<span class="o">$</span>V1<span class="p">))</span>
-<span class="kp">print</span><span class="p">(</span><span class="kp">summary</span><span class="p">(</span>d2<span class="o">$</span>V1<span class="p">))</span>
-<span class="kp">print</span><span class="p">(</span>sd<span class="p">(</span>d2<span class="o">$</span>V1<span class="p">))</span>
-<span class="kp">print</span><span class="p">(</span>ks.test<span class="p">(</span>d1<span class="o">$</span>V1<span class="p">,</span> d2<span class="o">$</span>V1<span class="p">,</span> alternative <span class="o">=</span> <span class="s">&#39;greater&#39;</span><span class="p">))</span>
-<span class="kp">print</span><span class="p">(</span>ks.test<span class="p">(</span>d1<span class="o">$</span>V1<span class="p">,</span> d2<span class="o">$</span>V1<span class="p">,</span> alternative <span class="o">=</span> <span class="s">&#39;less&#39;</span><span class="p">))</span>
-<span class="kp">print</span><span class="p">(</span>ks.test<span class="p">(</span>d1<span class="o">$</span>V1<span class="p">,</span> d2<span class="o">$</span>V1<span class="p">,</span> alternative <span class="o">=</span> <span class="s">&#39;two.sided&#39;</span><span class="p">))</span></code></pre></div>
+<span class="nf">print</span><span class="p">(</span><span class="nf">summary</span><span class="p">(</span><span class="n">d1</span><span class="o">$</span><span class="n">V1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">sd</span><span class="p">(</span><span class="n">d1</span><span class="o">$</span><span class="n">V1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">summary</span><span class="p">(</span><span class="n">d2</span><span class="o">$</span><span class="n">V1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">sd</span><span class="p">(</span><span class="n">d2</span><span class="o">$</span><span class="n">V1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">ks.test</span><span class="p">(</span><span class="n">d1</span><span class="o">$</span><span class="n">V1</span><span class="p">,</span> <span class="n">d2</span><span class="o">$</span><span class="n">V1</span><span class="p">,</span> <span class="n">alternative</span> <span class="o">=</span> <span class="s">&#39;greater&#39;</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">ks.test</span><span class="p">(</span><span class="n">d1</span><span class="o">$</span><span class="n">V1</span><span class="p">,</span> <span class="n">d2</span><span class="o">$</span><span class="n">V1</span><span class="p">,</span> <span class="n">alternative</span> <span class="o">=</span> <span class="s">&#39;less&#39;</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">ks.test</span><span class="p">(</span><span class="n">d1</span><span class="o">$</span><span class="n">V1</span><span class="p">,</span> <span class="n">d2</span><span class="o">$</span><span class="n">V1</span><span class="p">,</span> <span class="n">alternative</span> <span class="o">=</span> <span class="s">&#39;two.sided&#39;</span><span class="p">))</span>
+</code></pre></div>
                     
                     
 

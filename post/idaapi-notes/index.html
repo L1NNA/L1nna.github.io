@@ -6,7 +6,7 @@
 
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.74.3" />
 
     <title>IDAAPI Notes | Posts</title>
 
@@ -101,9 +101,7 @@
             </div>
             <div class="col-lg-8 offset-lg-2">
                 <div class="post-single-content default bg-one  wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="100ms">
-                    
-
-<h2 id="force-creation-of-an-assembly-function">Force creation of an assembly function:</h2>
+                    <h2 id="force-creation-of-an-assembly-function">Force creation of an assembly function:</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># get address from unstripped file</span>
 <span class="k">def</span> <span class="nf">check</span><span class="p">():</span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">idaapi</span><span class="o">.</span><span class="n">get_func</span><span class="p">(</span><span class="n">ScreenEA</span><span class="p">())</span>
@@ -113,13 +111,14 @@
 <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">ea_start</span><span class="p">,</span> <span class="n">ea_end</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">addr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ea_start</span><span class="p">,</span> <span class="n">ea_end</span><span class="p">):</span> 
         <span class="n">idaapi</span><span class="o">.</span><span class="n">create_insn</span><span class="p">(</span><span class="n">addr</span><span class="p">)</span>
-    <span class="n">MakeFunction</span><span class="p">(</span><span class="n">ea_start</span><span class="p">,</span> <span class="n">ea_end</span><span class="p">)</span></code></pre></div>
-<h2 id="remove-stack-reference-name-in-current-function">Remove stack reference name in current function:</h2>
+    <span class="n">MakeFunction</span><span class="p">(</span><span class="n">ea_start</span><span class="p">,</span> <span class="n">ea_end</span><span class="p">)</span>
+</code></pre></div><h2 id="remove-stack-reference-name-in-current-function">Remove stack reference name in current function:</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">unstack</span><span class="p">():</span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">idaapi</span><span class="o">.</span><span class="n">get_func</span><span class="p">(</span><span class="n">ScreenEA</span><span class="p">())</span>
     <span class="k">for</span> <span class="n">addr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">startEA</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">endEA</span><span class="p">):</span> 
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-            <span class="n">idc</span><span class="o">.</span><span class="n">OpOff</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span></code></pre></div>
+            <span class="n">idc</span><span class="o">.</span><span class="n">OpOff</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+</code></pre></div>
                     
                     
 

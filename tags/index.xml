@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on L1NNA</title>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Deeplearning</title>
+      <title>DeepLearning</title>
       <link>https://l1nna.com/tags/deeplearning/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
@@ -30,56 +30,11 @@
     </item>
     
     <item>
-      <title>Ida</title>
-      <link>https://l1nna.com/tags/ida/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/tags/ida/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://l1nna.com/tags/machine-learning/</link>
-      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://l1nna.com/tags/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>R</title>
       <link>https://l1nna.com/tags/r/</link>
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://l1nna.com/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reverse Engineering</title>
-      <link>https://l1nna.com/tags/reverse-engineering/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/tags/reverse-engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sklean</title>
-      <link>https://l1nna.com/tags/sklean/</link>
-      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/tags/sklean/</guid>
       <description></description>
     </item>
     
@@ -102,11 +57,56 @@
     </item>
     
     <item>
+      <title>Machine Learning</title>
+      <link>https://l1nna.com/tags/machine-learning/</link>
+      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sklean</title>
+      <link>https://l1nna.com/tags/sklean/</link>
+      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/tags/sklean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Xgboost</title>
       <link>https://l1nna.com/tags/xgboost/</link>
       <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://l1nna.com/tags/xgboost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDA</title>
+      <link>https://l1nna.com/tags/ida/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/tags/ida/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://l1nna.com/tags/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reverse Engineering</title>
+      <link>https://l1nna.com/tags/reverse-engineering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://l1nna.com/tags/reverse-engineering/</guid>
       <description></description>
     </item>
     

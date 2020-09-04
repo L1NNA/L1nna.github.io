@@ -1,9 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://l1nna.com/author/john-doe/</loc>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://l1nna.com/project/assembly-code-data-mining/</loc>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/</loc>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/</loc>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/project/</loc>
     <lastmod>2019-10-12T14:51:12+06:00</lastmod>
   </url>
   
@@ -23,6 +43,31 @@
   </url>
   
   <url>
+    <loc>https://l1nna.com/tags/deeplearning/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/hardware/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/post/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/steven/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://l1nna.com/project/authorship-analysis/</loc>
     <lastmod>2018-09-12T14:51:12+06:00</lastmod>
   </url>
@@ -38,8 +83,33 @@
   </url>
   
   <url>
+    <loc>https://l1nna.com/tags/r/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://l1nna.com/post/ggplot-notes/</loc>
     <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/statistics/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/writing/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/machine-learning/</loc>
+    <lastmod>2016-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/tags/sklean/</loc>
+    <lastmod>2016-05-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -48,12 +118,12 @@
   </url>
   
   <url>
-    <loc>https://l1nna.com/author/jamica-jock/</loc>
+    <loc>https://l1nna.com/tags/xgboost/</loc>
+    <lastmod>2016-05-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://l1nna.com/author/john-doe/</loc>
-    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
+    <loc>https://l1nna.com/author/jamica-jock/</loc>
   </url>
   
   <url>
@@ -65,9 +135,7 @@
   </url>
   
   <url>
-    <loc>https://l1nna.com/author/</loc>
-    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
-    <priority>0</priority>
+    <loc>https://l1nna.com/categories/</loc>
   </url>
   
   <url>
@@ -79,7 +147,15 @@
   </url>
   
   <url>
+    <loc>https://l1nna.com/course/cisc873/</loc>
+  </url>
+  
+  <url>
     <loc>https://l1nna.com/course/cisc327/</loc>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/course/</loc>
   </url>
   
   <url>
@@ -87,29 +163,11 @@
   </url>
   
   <url>
-    <loc>https://l1nna.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/course/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/tags/deeplearning/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://l1nna.com/course/glis630/</loc>
   </url>
   
   <url>
-    <loc>https://l1nna.com/tags/hardware/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://l1nna.com/tags/ida/</loc>
   </url>
   
   <url>
@@ -121,94 +179,19 @@
   </url>
   
   <url>
-    <loc>https://l1nna.com/tags/ida/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/</loc>
-    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/tags/machine-learning/</loc>
-    <lastmod>2016-05-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/post/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/project/</loc>
-    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://l1nna.com/publications/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://l1nna.com/tags/python/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/tags/r/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://l1nna.com/tags/reverse-engineering/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/tags/sklean/</loc>
-    <lastmod>2016-05-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/tags/statistics/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/author/steven/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/tags/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/tags/writing/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1nna.com/tags/xgboost/</loc>
-    <lastmod>2016-05-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://l1nna.com/tags/xplore/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>

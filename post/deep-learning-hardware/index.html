@@ -6,7 +6,7 @@
 
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.74.3" />
 
     <title>Deep Learning Server Budget Build | Posts</title>
 
@@ -101,38 +101,14 @@
             </div>
             <div class="col-lg-8 offset-lg-2">
                 <div class="post-single-content default bg-one  wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="100ms">
-                    <p>I was looking for a budget build workstation for deep learning model training.
-I decided that the system to start with should have the <strong><em>best price-to-flop performance</em></strong>, since my experience with the latest Titan V/Telsa V100 on Google Cloud is not very good. Training complex models are not significantly faster than the TitanXP in our lab.
+                    <p>I was looking for a budget build workstation for deep learning model training. 
+I decided that the system to start with should have the <em><strong>best price-to-flop performance</strong></em>, since my experience with the latest Titan V/Telsa V100 on Google Cloud is not very good. Training complex models are not significantly faster than the TitanXP in our lab. 
 It will still take some time for the major deep learning frameworks to fully exploit the advantages of the added Tensor Cores.
-With the same budget, I can already get 4x1080ti which can significantly boost my training speed by data parallelization.
+With the same budget, I can already get 4x1080ti which can significantly boost my training speed by data parallelization. 
 Belows are benchmarks and specs from <a href="https://github.com/u39kun/deep-learning-benchmark">Yusaku Sako</a>. My biased observation is that, <em>optimizing my code will make my models get trained faster than switching to the latest GPU for my use cases</em>.</p>
-
-<style>
-td {
-        border-bottom: 1px groove #c7c8cb;
-        border-top: 1px groove #c7c8cb;
-        padding-left:20px;
-}
-
-table{
-    background-color: rgba(0, 0, 0, .486);
-    padding: 20px;
-    font-size: 10pt;
-    width: 100%;
-}
-
-img{
-    background-color: rgba(0, 0, 0, .486);
-    width:100%;
-}
-
-center{
-    overflow-x: auto;
-}
-</style>
-
-<p><center></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <table>
 <thead>
 <tr>
@@ -146,7 +122,6 @@ center{
 <th>Cost</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Tesla V100</td>
@@ -158,7 +133,6 @@ center{
 <td>125</td>
 <td>$3.06/hr</td>
 </tr>
-
 <tr>
 <td>Titan V</td>
 <td>Volta</td>
@@ -169,7 +143,6 @@ center{
 <td>110*</td>
 <td>$2999</td>
 </tr>
-
 <tr>
 <td>1080 Ti</td>
 <td>Pascal</td>
@@ -182,13 +155,9 @@ center{
 </tr>
 </tbody>
 </table>
-
-<p></center></p>
-
+<!-- raw HTML omitted -->
 <p>The benchmark below is taken from <a href="https://lambdalabs.com/blog/best-gpu-tensorflow-2080-ti-vs-v100-vs-titan-v-vs-1080-ti-benchmark/">Lambda Lab Benchmark</a>. Values represent the speed-up-against-1080ti/$1000 (F32). Again, for my use case this number should be much lower, since the GPU is not very well utilized.</p>
-
-<p><center></p>
-
+<!-- raw HTML omitted -->
 <table>
 <thead>
 <tr>
@@ -199,7 +168,6 @@ center{
 <th>1080 Ti</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Price Per GPU (k$)</td>
@@ -208,7 +176,6 @@ center{
 <td>9.8</td>
 <td>0.7</td>
 </tr>
-
 <tr>
 <td>Price Per 1 GPU System (k$)</td>
 <td>2.49</td>
@@ -216,7 +183,6 @@ center{
 <td>11.09</td>
 <td>1.99</td>
 </tr>
-
 <tr>
 <td>AVG</td>
 <td>0.55</td>
@@ -224,7 +190,6 @@ center{
 <td>0.16</td>
 <td>0.5</td>
 </tr>
-
 <tr>
 <td>ResNet-50</td>
 <td>0.56</td>
@@ -232,7 +197,6 @@ center{
 <td>0.16</td>
 <td>0.5</td>
 </tr>
-
 <tr>
 <td>ResNet-152</td>
 <td>0.53</td>
@@ -240,7 +204,6 @@ center{
 <td>0.14</td>
 <td>0.5</td>
 </tr>
-
 <tr>
 <td>InceptionV3</td>
 <td>0.58</td>
@@ -248,7 +211,6 @@ center{
 <td>0.17</td>
 <td>0.5</td>
 </tr>
-
 <tr>
 <td>InceptionV4</td>
 <td>0.57</td>
@@ -256,7 +218,6 @@ center{
 <td>0.14</td>
 <td>0.5</td>
 </tr>
-
 <tr>
 <td>VGG16</td>
 <td>0.51</td>
@@ -264,7 +225,6 @@ center{
 <td>0.16</td>
 <td>0.5</td>
 </tr>
-
 <tr>
 <td>AlexNet</td>
 <td>0.52</td>
@@ -272,7 +232,6 @@ center{
 <td>0.16</td>
 <td>0.5</td>
 </tr>
-
 <tr>
 <td>SSD300</td>
 <td>0.55</td>
@@ -282,11 +241,8 @@ center{
 </tr>
 </tbody>
 </table>
-
-<p></center></p>
-
+<!-- raw HTML omitted -->
 <p>Then I came across the PC build of the <a href="https://pcpartpicker.com/list/mXFJd6">Lambda Lab build</a> and a customized build by <a href="https://ca.pcpartpicker.com/b/b9KBD3">kylemcdonald</a> on <a href="pcpartpicker.com">pcpartpicker.com</a>. I combine them as below:</p>
-
 <table>
 <thead>
 <tr>
@@ -295,80 +251,67 @@ center{
 <th></th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>CPU</td>
 <td>Intel - Core i7-6850K 3.6 GHz 6-Core Processor</td>
 <td>$863.99</td>
 </tr>
-
 <tr>
 <td>CPU Cooler</td>
 <td>Intel - BXTS13A CPU Cooler</td>
 <td>$21</td>
 </tr>
-
 <tr>
 <td>Motherboard</td>
 <td>Asus - X99-E WS/USB 3.1 SSI CEB LGA2011-3 Motherboard</td>
 <td>$680.84</td>
 </tr>
-
 <tr>
 <td>Memory</td>
 <td>Corsair - Vengeance LPX 64 GB (4 x 16 GB) DDR4-2666 Memory</td>
 <td>$612</td>
 </tr>
-
 <tr>
 <td>Storage</td>
 <td>Crucial - MX300 1.05 TB 2.5&rdquo; Solid State Drive</td>
 <td>$341.99</td>
 </tr>
-
 <tr>
 <td>Video Card</td>
 <td>PNY 1080 T​i Founders​ Edition (or any blower-style 1080ti)</td>
 <td></td>
 </tr>
-
 <tr>
-<td></td>
 <td>PNY 1080 T​i Founders​ Edition (or any blower-style 1080ti)</td>
 <td></td>
-</tr>
-
-<tr>
 <td></td>
+</tr>
+<tr>
 <td>PNY 1080 T​i Founders​ Edition (or any blower-style 1080ti)</td>
 <td></td>
-</tr>
-
-<tr>
 <td></td>
+</tr>
+<tr>
 <td>PNY 1080 T​i Founders​ Edition (or any blower-style 1080ti)</td>
 <td></td>
+<td></td>
 </tr>
-
 <tr>
 <td>Case</td>
 <td>Corsair - Carbide 400Q ATX Mid Tower Case</td>
 <td>$164.74</td>
 </tr>
-
 <tr>
 <td>Case</td>
 <td>Carbide Se​ries® Air ​540 Arctic​ Black</td>
 <td>$169.99</td>
 </tr>
-
 <tr>
 <td>Power Supply</td>
 <td>EVGA - SuperNOVA P2 1600 W 80+ Platinum Certified Fully-Modular ATX Power Supply</td>
 <td>$347</td>
 </tr>
-
 <tr>
 <td>Total</td>
 <td></td>
@@ -376,14 +319,11 @@ center{
 </tr>
 </tbody>
 </table>
-
 <p>The total price above does not include the GPUs. The price of 1080ti varies depending on where you want to get one.
-I will probably get those from e-Bay, so the cost can be significantly lower.
-Based on the reviews, GPUs from e-Bay work fairly well for reasonable price.
+I will probably get those from e-Bay, so the cost can be significantly lower. 
+Based on the reviews, GPUs from e-Bay work fairly well for reasonable price. 
 Of course one needs to be cautious with those offers that are too good to be true.</p>
-
 <p>Any 1080ti version that comes with a blower style thermal solution should be compatible:</p>
-
 <figure>
     <img src="./1080ti.png"
          alt="image"/> <figcaption>
@@ -391,15 +331,13 @@ Of course one needs to be cautious with those offers that are too good to be tru
         </figcaption>
 </figure>
 
-
-<p>The above setup is versatile, it can fit other NV-brand GPUs.
+<p>The above setup is versatile, it can fit other NV-brand GPUs. 
 So I can upgrade my GPU later on.
 That&rsquo;s why I still use brand-new parts for the other components.</p>
-
 <p>It is noted that the CPU supports 40 PCIe lanes. Even though there will require 4*16 lanes for four GPUs,
 the motherboard comes with a PLX switch that can simulate 16 lanes for each GPU.
 So one can avoid the wired <code>16x8x8x8</code> setups.
-However, <strong><em>the maximum bandwidth still limits to 40 lanes at the same moment</em></strong>.
+However, <em><strong>the maximum bandwidth still limits to 40 lanes at the same moment</strong></em>.
 This would be problematic for data parallelization, since we need to wait for the slowest GPU to finish before moving on the next step.
 This problem cannot be fixed without a budget &lt; $20,000 (we need two CPUs).
 For now I will just ignore this issue.</p>
