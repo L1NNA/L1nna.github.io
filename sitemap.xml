@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://l1nna.com/author/john-doe/</loc>
-    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://l1nna.com/project/assembly-code-data-mining/</loc>
     <lastmod>2019-10-12T14:51:12+06:00</lastmod>
   </url>
   
   <url>
     <loc>https://l1nna.com/author/</loc>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/</loc>
+    <lastmod>2019-10-12T14:51:12+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/john-doe/</loc>
     <lastmod>2019-10-12T14:51:12+06:00</lastmod>
   </url>
   
@@ -123,11 +128,43 @@
   </url>
   
   <url>
-    <loc>https://l1nna.com/author/jamica-jock/</loc>
+    <loc>https://l1nna.com/author/chris-molly/</loc>
   </url>
   
   <url>
-    <loc>https://l1nna.com/author/somrat/</loc>
+    <loc>https://l1nna.com/author/daniel-fichtinger/</loc>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/jun-hong-peng/</loc>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/leo-song/</loc>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/litao-li/</loc>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/michael-wrana/</loc>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/sarah-labrosse/</loc>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/steven-ding/</loc>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/weihan-ou/</loc>
+  </url>
+  
+  <url>
+    <loc>https://l1nna.com/author/ziad-mansour/</loc>
   </url>
   
   <url>
