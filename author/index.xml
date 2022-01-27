@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors on L1NNA</title>
+    <title>Author on L1NNA</title>
     <link>https://l1nna.com/author/</link>
-    <description>Recent content in Authors on L1NNA</description>
+    <description>Recent content in Author on L1NNA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 12 Oct 2019 14:51:12 +0600</lastBuildDate>
@@ -12,144 +12,21 @@
     
     
     <item>
-      <title></title>
-      <link>https://l1nna.com/author/caleb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>John Doe</title>
+      <link>https://l1nna.com/author/john-doe/</link>
+      <pubDate>Sat, 12 Oct 2019 14:51:12 +0600</pubDate>
       
-      <guid>https://l1nna.com/author/caleb/</guid>
-      <description>Education  2018-2021 Queen&amp;rsquo;s University &amp;ndash; Kingston, Canada  B.S., Computer Science, Dean&amp;rsquo;s List    Grants &amp;amp; Awards           2019;2020 Dean&amp;rsquo;s List    2018;2019 Dean&amp;rsquo;s List    2018;2018 Queen&amp;rsquo;s University Excellence Scholarship $2,000   2017;2018 Top25% Euclid Mathematics competition     </description>
+      <guid>https://l1nna.com/author/john-doe/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://l1nna.com/author/chris-molly/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Steven</title>
+      <link>https://l1nna.com/author/steven/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://l1nna.com/author/chris-molly/</guid>
-      <description>Education  2016-2020 Queen&amp;rsquo;s University, Kingston, Canada  Bachelor&amp;rsquo;s of Computing in Mathematics    </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/christina/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/christina/</guid>
-      <description>Education  2018 - 2021 Queen’s University, Kingston, Canada Undergraduate Study in Computer Science Specialization  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/daniel-fichtinger/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/daniel-fichtinger/</guid>
-      <description>TBA</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/jeremy-banks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/jeremy-banks/</guid>
-      <description>Education  2017-2021 Royal Military College of Canada, Kingston, Ontario, Canada  BSc (Honours) Computer Science, First Class Distinction Supervisor: Dr.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/jun-hong-peng/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/jun-hong-peng/</guid>
-      <description>TBA</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/leo-song/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/leo-song/</guid>
-      <description>Education   2020-present Queen&amp;rsquo;s University &amp;ndash; Kingston, Canada
- Ph.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/litao-li/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/litao-li/</guid>
-      <description>Education   2020-present Queen&amp;rsquo;s University &amp;ndash; Kingston, Canada
- Ph.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/mark-adams/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/mark-adams/</guid>
-      <description>​
-Education ​
- 2015-2017 University of British Columbia &amp;ndash; Vancouver, Canada  M.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/michael-wrana/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/michael-wrana/</guid>
-      <description>TBA</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/ryan/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/ryan/</guid>
-      <description>Education  2016-2021 Queen&amp;rsquo;s University, Kingston, Canada  BCmpH, Computer Science Professional Internship @ Defence Research and Development Canada    </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/sarah-labrosse/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/sarah-labrosse/</guid>
-      <description>Education  2018-2022 Queen&amp;rsquo;s University, Kingston, Canada  Queen&amp;rsquo;s Excellence Scholarship Veribin Co-Author    </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/steven-ding/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/steven-ding/</guid>
-      <description>Education   2014-2019 McGill University, Montreal, Canada
- PhD in Information Studies Supervisor: Prof.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/weihan-ou/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/weihan-ou/</guid>
-      <description>Education   2020-now Queen&amp;rsquo;s University, Kingston, Canada
-  Doctoral student in Machine Learning and Cyber Security</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1nna.com/author/ziad-mansour/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1nna.com/author/ziad-mansour/</guid>
-      <description>Education  2020-2022 Queen&amp;rsquo;s University, Ontario, Canada  M.A.Sc., Computer Science Supervisor: Prof.</description>
+      <guid>https://l1nna.com/author/steven/</guid>
+      <description></description>
     </item>
     
   </channel>
