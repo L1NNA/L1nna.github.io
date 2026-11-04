@@ -1,0 +1,44 @@
+{
+  "add": [
+    {
+      "title": "Supplier-Independent Capability Verification of Software and Firmware with AI-Driven ATT&CK Mapping",
+      "venue": "International Conference on Cyber Conflict (CyCon)",
+      "year": 2026,
+      "date": "2026-05-26",
+      "doi": "https://doi.org/10.23919/CyCon70911.2026.11609414"
+    },
+    {
+      "title": "Transforming Generic Coder LLMs to Effective Binary Code Embedding Models for Similarity Detection",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "date": "2025-12-02",
+      "doi": "https://doi.org/10.52202/085713-5681"
+    },
+    {
+      "title": "ProvSpider: A Robust and Universal Toolkit for Binary Provenance Analysis Using Deep Learning",
+      "venue": "IEEE International Symposium on Network Computing and Applications (NCA)",
+      "year": 2025,
+      "date": "2025-11-05",
+      "doi": "https://doi.org/10.1109/NCA67271.2025.00028"
+    },
+    {
+      "title": "Adversarial Variational Modality Reconstruction and Regularization for Zero-Day Malware Variants Similarity Detection",
+      "venue": "IEEE International Conference on Data Mining (ICDM)",
+      "year": 2022,
+      "date": "2022-11-28"
+    }
+  ],
+  "hide": [
+    "Kam1n0",
+    "Mapless UAV navigation in complex environments: A survey on deep reinforcement learning approaches",
+    "Integrating AI and Social Responsibility in Portfolio Optimization: A Study with Evolutionary Algorithms"
+  ],
+  "venues": {
+    "MalGPT: A Generative Explainable Model for Malware Binaries": "ECML PKDD",
+    "Automating SBOM Generation with Zero-Shot Semantic Similarity": "International Conference on Signal Processing and Information Communications (ICSPIC)",
+    "Accelerating Autonomous Cyber Operations: A Symbolic Logic Planner Guided Reinforcement Learning Approach": "International Conference on Computing, Networking and Communications (ICNC)",
+    "Unmasking of Maskware: Detection and Prevention of Next-Generation Mobile Crypto-Ransomware": "International Symposium on Foundations and Practice of Security",
+    "Ch4os: Discretized Generative Adversarial Network for Functionality-Preserving Evasive Modification on Malware": "International Conference on Artificial Neural Networks (ICANN)",
+    "Cut It: Deauthentication Attacks on Protected Management Frames in WPA2 and WPA3": "International Symposium on Foundations and Practice of Security"
+  }
+}

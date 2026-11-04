@@ -1,0 +1,355 @@
+@font-face {
+  font-family: "Saira";
+  src: url("assets/fonts/saira-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --red: #ed1b2f;
+  --ink: #002452;
+  --soft: #5c6778;
+  --rule: #e3e6eb;
+  --line-strong: #cfd5de;
+  --font: "Saira", "Helvetica Neue", Arial, sans-serif;
+  --strip: clamp(5.5rem, 9vw, 9rem);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, p, ul { margin: 0; padding: 0; }
+h1, h2 { font-weight: inherit; }
+ul { list-style: none; }
+
+a { color: var(--red); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+.skip {
+  position: absolute;
+  left: 7rem;
+  top: -4rem;
+  z-index: 4;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: var(--ink);
+}
+.skip:focus { top: 1rem; }
+
+/* Holds the scroll cue, which stays put while the page moves. */
+.stage {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.moving .stage { display: block; }
+
+/* The logo sits inside the side panel, so it scrolls exactly with the headline. */
+.piece {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  pointer-events: none;
+  will-change: transform;
+}
+.moving .piece { display: block; }
+
+/* An outline of the whole logo, which scrolling traces over and then fills. */
+.ghost { fill: none; stroke-width: 0.5; }
+.ghost-a { stroke: var(--ink); opacity: 0.3; }
+.ghost-l { stroke: var(--red); opacity: 0.35; }
+.trace {
+  fill: none;
+  stroke-width: 0.5;
+  stroke-linejoin: miter;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.trace-a { stroke: var(--ink); }
+.trace-l { stroke: var(--red); }
+.fill-a, .slot .piece-a { fill: var(--ink); }
+.fill-l, .slot .piece-l { fill: var(--red); }
+
+.cue {
+  position: absolute;
+  bottom: 1.75rem;
+  left: calc((100% + var(--strip)) / 2);
+  translate: -50% 0;
+  color: var(--soft);
+  font-size: 0.875rem;
+}
+
+/* Two shards, McGill red and Queen's blue, split by the logo's diagonal cut.
+   script.js moves the cut up the strip as the page scrolls, so blue takes over. */
+.strip {
+  --split: 72%;
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 2;
+  width: var(--strip);
+  background: linear-gradient(210deg, var(--red) 0 var(--split), #fff var(--split) calc(var(--split) + 1.5%), var(--ink) calc(var(--split) + 1.5%));
+  clip-path: polygon(0 0, 62% 0, 100% 100%, 0 100%);
+}
+
+
+.mark {
+  position: fixed;
+  top: 1.75rem;
+  left: 1rem;
+  z-index: 3;
+  width: 2.25rem;
+}
+.mark svg { display: block; fill: #fff; }
+
+/* One side stays pinned while the other scrolls. */
+.page {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
+}
+
+.side {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem 2rem 2rem calc(var(--strip) + clamp(1.25rem, 2.5vw, 2.5rem));
+}
+
+.column {
+  position: relative;
+  z-index: 1;
+  max-width: 54rem;
+  padding: 3rem clamp(2rem, 5vw, 5rem) 0 clamp(1rem, 2vw, 2rem);
+}
+.moving .column { padding-top: calc(var(--pin) + 42vh); }
+
+/* Small type */
+.top, h2, .pubs span, footer {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.top a { color: var(--ink); text-decoration: none; }
+.top a:hover { color: var(--red); }
+.name { font-weight: 500; }
+.top ul { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin-top: 0.5rem; }
+.top li a { color: var(--soft); }
+
+/* Opening */
+.opening { position: relative; margin-block: auto; }
+.slot { display: block; width: clamp(8rem, 24vh, 15rem); overflow: visible; }
+.moving .slot { visibility: hidden; }
+
+h1 {
+  margin-top: clamp(1.25rem, 3.5vh, 2.5rem);
+  font-size: clamp(2.25rem, 3.5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+h1 span, h1 em { display: block; }
+
+/* The headline starts as an outline and fills from left to right. */
+.moving h1 span, .moving h1 em {
+  --fill: 0%;
+  width: fit-content;
+  /* Keeps the fill from cutting off the descenders. */
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+  color: transparent;
+  -webkit-text-stroke: 0.6px var(--line);
+  background: linear-gradient(90deg, var(--line) var(--fill), transparent var(--fill));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.moving h1 span { --line: var(--ink); }
+.moving h1 em { --line: var(--red); }
+h1 em { color: var(--red); font-style: normal; }
+
+/* Team size as counts only: the site names no one but the director.
+   Columns size themselves, so a category can be added when it applies. */
+.team { max-width: 26rem; margin-top: clamp(1.25rem, 3.5vh, 2.5rem); }
+.team dl {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  margin: 0;
+  border-top: 1px solid var(--line-strong);
+}
+.team dl > div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  padding: 0.6rem 0.5rem 0 0;
+}
+.team dd {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+.team dl > div:nth-child(odd) dd { color: var(--red); }
+.team dt { margin-top: 0.2rem; color: var(--soft); font-size: 0.75rem; line-height: 1.25; }
+.team p { margin-top: 0.75rem; color: var(--soft); font-size: 0.75rem; }
+
+/* Sections: a quiet label above the content, divided by a hairline */
+.row {
+  display: grid;
+  gap: 1.75rem;
+  padding-block: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 0;
+}
+.row:first-child { border-top: 0; padding-top: 0; }
+h2 { color: var(--soft); }
+
+/* Research */
+.areas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+}
+/* Boxes with one corner cut at the logo's 60 degree angle. The box itself draws
+   the border, ::before the white inside, and ::after the navy hover fill. */
+.areas > div {
+  --cut: polygon(0 0, calc(100% - 1.25rem) 0, 100% 2.165rem, 100% 100%, 0 100%);
+  position: relative;
+  padding: 1.5rem 1.75rem 1.6rem 1.5rem;
+  background: var(--line-strong);
+  clip-path: var(--cut);
+}
+.areas > div::before, .areas > div::after {
+  content: "";
+  position: absolute;
+  clip-path: var(--cut);
+}
+.areas > div::before { inset: 1px; background: #fff; }
+.areas > div::after {
+  inset: 0;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* An odd box out takes the full width, so the grid has no gap. */
+.areas > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.areas dt, .areas dd { position: relative; z-index: 1; transition: color 0.25s ease; }
+.areas dt { font-size: 1.3125rem; font-weight: 400; line-height: 1.25; }
+.areas dt::before {
+  content: "";
+  display: block;
+  width: 1.75rem;
+  height: 3px;
+  margin-bottom: 1rem;
+  background: var(--red);
+}
+.areas > div:nth-child(even) dt::before { background: var(--ink); }
+.areas dd { margin: 0.6rem 0 0; color: var(--soft); font-size: 1rem; line-height: 1.5; }
+
+@media (hover: hover) {
+  .areas > div:hover::after { transform: scaleX(1); }
+  .areas > div:hover dt { color: #fff; }
+  .areas > div:hover dd { color: #d6dde8; }
+  .areas > div:nth-child(even):hover dt::before { background: #fff; }
+}
+
+/* Publications */
+.pubs li + li { margin-top: 1.75rem; }
+.pubs cite {
+  display: block;
+  max-width: 44rem;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+.pubs span { display: block; margin-top: 0.3rem; color: var(--soft); }
+.more { margin-top: 2rem; font-size: 0.875rem; }
+.pubs cite a { color: inherit; text-decoration: none; }
+.pubs cite a:hover { color: var(--red); text-decoration: underline; }
+.all { margin-top: 2rem; }
+.all summary {
+  width: fit-content;
+  color: var(--red);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.all[open] summary { margin-bottom: 1.75rem; }
+.moving .all .pubs li { opacity: 1; translate: none; transition: none; }
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 2.5rem;
+  padding-block: 2rem 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--soft);
+}
+
+/* Research and papers arrive as they scroll into view. */
+.moving .row h2, .moving .areas > div, .moving .pubs li {
+  opacity: 0;
+  translate: 0 2rem;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), translate 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.moving .seen { opacity: 1 !important; translate: 0 0 !important; }
+
+/* Not-found page */
+.lost {
+  padding: 22vh 2rem 0 calc(var(--strip) + clamp(2rem, 5vw, 5rem));
+}
+.lost h1 { font-size: clamp(3rem, 7vw, 6rem); margin-top: 0; }
+.lost p { max-width: 31rem; margin-top: 2rem; font-size: 1.375rem; font-weight: 300; }
+
+@media (max-width: 56rem) {
+  /* The strip becomes a wedge across the top of the page. */
+  .strip {
+    position: absolute;
+    inset: 0 0 auto 0;
+    width: auto;
+    height: 5.25rem;
+    background: linear-gradient(120deg, var(--red) 0 70%, #fff 70% 71%, var(--ink) 71%);
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 100%);
+  }
+  .mark { position: absolute; top: 1rem; left: 1.5rem; }
+  .cue { left: 50%; }
+
+  /* No room for two columns: the opening holds still, then the page scrolls normally. */
+  .page { display: block; }
+  .moving .rail { height: calc(100vh + var(--pin)); }
+  .side { position: static; height: auto; padding: 6.25rem 1.5rem 3rem; }
+  .moving .side { position: sticky; height: 100vh; padding-bottom: 1.5rem; }
+  h1 { font-size: clamp(2.75rem, 13.4vw, 6.5rem); }
+  .slot { width: min(42vw, 12rem); }
+  .areas { grid-template-columns: minmax(0, 1fr); }
+  .areas > div { padding: 1.25rem 1.5rem 1.35rem 1.25rem; }
+  .column, .moving .column { padding: 0 1.5rem; }
+  .row:first-child { padding-top: 1rem; }
+  .lost { padding: 8rem 1.5rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .areas > div::after, .areas dt, .areas dd { transition: none; }
+}
