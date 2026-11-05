@@ -230,7 +230,8 @@ h2 {
 .moving .mosaic img { will-change: transform; }
 .place { grid-column: 1 / -1; padding-top: 1.5rem; margin-bottom: clamp(1.5rem, 3vw, 3rem); color: var(--soft); }
 .place:last-child { margin-bottom: 0; }
-.place strong, .place small { display: block; }
+.place strong, .place small, .place span { display: block; }
+.place span { max-width: 46rem; margin-top: 0.3rem; color: var(--ink); }
 .place strong { color: var(--ink); font-size: clamp(1.375rem, 2.2vw, 2rem); font-weight: 350; letter-spacing: -0.015em; }
 .place.red strong { color: var(--red); }
 .place small { margin-top: 0.25rem; font-size: 0.8125rem; }
@@ -336,11 +337,12 @@ footer {
   justify-content: space-between;
   align-items: center;
   gap: 0.35rem 2rem;
-  padding: 1.25rem var(--edge) 1.5rem;
+  padding: clamp(3rem, 6vw, 5rem) var(--edge) 1.75rem;
   color: var(--soft);
   font-size: 0.8125rem;
   line-height: 1.4;
 }
+.foot-land { flex-basis: 100%; max-width: 62rem; font-size: 0.75rem; line-height: 1.45; }
 .foot-lab { display: flex; align-items: center; gap: 0.6rem; }
 .foot-mark { width: 1.5rem; flex: none; }
 
