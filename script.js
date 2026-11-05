@@ -6,7 +6,9 @@ const title = document.querySelector("h1");
 const lines = [...title.children];
 const column = document.querySelector(".column");
 const cue = document.querySelector(".cue");
+const since = document.querySelector(".since");
 const team = document.querySelector(".team");
+const schools = document.querySelector(".schools");
 const logo = document.querySelector(".piece");
 const wipe = document.querySelector(".wipe");
 const traceL = document.querySelector(".trace-l");
@@ -25,6 +27,7 @@ let narrow;
 let pin;
 let range;
 let big;
+let drop;
 let shrink;
 let bigX;
 let bigY;
@@ -39,6 +42,8 @@ function layout() {
   pin = h * 1.7;
   root.style.setProperty("--pin", `${pin}px`);
 
+  title.style.transform = "none";
+  since.style.transform = "none";
   // The logo is positioned relative to the side panel it lives in.
   const panel = side.getBoundingClientRect();
   const top = panel.top;
@@ -47,15 +52,22 @@ function layout() {
   const room = column.getBoundingClientRect();
   const height = 116 / 132;
   if (narrow) {
-    big = Math.min(w * 0.82, (head.top - top - 170) / height);
+    // The headline starts lower, into the space the team numbers fill later, so the
+    // logo can start large. It rises as the logo shrinks.
+    const widest = w * 0.88;
+    const roomBelow = h - 70 - (since.getBoundingClientRect().bottom - top);
+    drop = Math.max(0, Math.min(roomBelow, 170 + widest * height - (head.top - top)));
+    big = Math.min(widest, (head.top - top + drop - 170) / height);
     bigX = w / 2 - panel.left;
-    bigY = head.top - top - 16 - (big * height) / 2;
+    bigY = head.top - top + drop - 16 - (big * height) / 2;
   } else {
+    drop = 0;
     big = Math.min(room.width * 0.8, (h * 0.66) / height);
     bigX = room.left + room.width / 2 - panel.left;
     bigY = h / 2;
   }
   shrink = home.width / big;
+  cue.style.left = `${head.left}px`;
   homeX = home.left - panel.left + home.width / 2;
   homeY = home.top - top + home.height / 2;
 
@@ -77,18 +89,26 @@ function render(position) {
   lines[1].style.setProperty("--fill", `${second * 100}%`);
 
   // The logo fills from left to right too.
-  wipe.setAttribute("width", 132 * span(z, 0.58, 0.72));
+  const filled = span(z, 0.58, 0.72);
+  wipe.setAttribute("width", 132 * filled);
+
+  // The subtitle fills along with it.
+  since.style.setProperty("--fill", `${filled * 100}%`);
 
   // Then it shrinks and rises, then slides across, so it passes above the headline.
   const small = ease(span(z, 0.72, 0.88));
   const across = ease(span(z, 0.76, 1));
   logo.style.transform =
     `translate3d(${lerp(bigX, homeX, across)}px, ${lerp(bigY, homeY, small)}px, 0) scale(${lerp(1, shrink, small)})`;
+  const lowered = `translate3d(0, ${(1 - small) * drop}px, 0)`;
+  title.style.transform = lowered;
+  since.style.transform = lowered;
 
-  // The team counts arrive once the headline is filled and the logo is on its way.
-  const counts = ease(span(z, 0.76, 0.92));
+  // The team and schools arrive once the headline is filled and the logo is on its way.
+  const counts = ease(span(z, 0.84, 0.98));
   team.style.opacity = counts;
   team.style.transform = `translate3d(0, ${(1 - counts) * 16}px, 0)`;
+  schools.style.opacity = counts;
 
   cue.style.opacity = 1 - span(z, 0, 0.05);
   strip.style.setProperty("--split", `${72 - clamp(position / range) * 48}%`);
@@ -142,5 +162,5 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
       }
     }
   }, { rootMargin: "0px 0px -6% 0px" });
-  document.querySelectorAll(".row h2, .areas > div, .pubs li").forEach((el) => reveal.observe(el));
+  document.querySelectorAll(".row h2, .areas > div, .pubs li, .campuses figure").forEach((el) => reveal.observe(el));
 }
