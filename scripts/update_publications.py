@@ -16,7 +16,7 @@ URL = (
     f"https://api.openalex.org/works?filter=author.id:{AUTHOR}&per-page=200"
     "&sort=publication_date:desc&select=title,publication_year,publication_date,type,primary_location,doi"
 )
-RECENT = 20  # Shown before the "All publications" toggle.
+RECENT = 15  # Shown before the "All publications" toggle.
 MINIMUM = 20  # Fewer results than this means something went wrong upstream.
 
 ROOT = Path(__file__).resolve().parent.parent
