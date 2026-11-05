@@ -162,5 +162,30 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
       }
     }
   }, { rootMargin: "0px 0px -6% 0px" });
-  document.querySelectorAll(".row h2, .areas > div, .pubs li, .campuses figure").forEach((el) => reveal.observe(el));
+  document.querySelectorAll(".row h2, .areas > div, .members li, .pubs li, .campuses figure").forEach((el) => reveal.observe(el));
 }
+
+// Long bios show about three lines, with a button to read the rest.
+function collapseBios() {
+  for (const item of document.querySelectorAll(".members li")) {
+    const bio = item.querySelector("p");
+    item.querySelector("button")?.remove();
+    bio.classList.add("clamped");
+    if (bio.scrollHeight <= bio.clientHeight + 1) {
+      bio.classList.remove("clamped");
+      continue;
+    }
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = "More";
+    button.addEventListener("click", () => {
+      const open = bio.classList.toggle("clamped");
+      button.textContent = open ? "More" : "Less";
+    });
+    bio.after(button);
+  }
+}
+
+collapseBios();
+document.fonts.ready.then(collapseBios);
+addEventListener("resize", collapseBios);
