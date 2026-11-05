@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Saira";
-  src: url("assets/fonts/saira-latin-wght-normal.woff2") format("woff2");
+  font-family: "Hanken Grotesk";
+  src: url("assets/fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
 }
@@ -8,439 +8,399 @@
 :root {
   --red: #ed1b2f;
   --ink: #002452;
+  --night: #001a3d;
   --soft: #5c6778;
-  --rule: #e3e6eb;
+  --rule: #dfe3e9;
   --line-strong: #cfd5de;
-  --font: "Saira", "Helvetica Neue", Arial, sans-serif;
-  --strip: clamp(5.5rem, 9vw, 9rem);
+  --edge: clamp(1.5rem, 5vw, 5rem);
+  --bar: 4.5rem;
+  --font: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
+html { scroll-behavior: smooth; scroll-padding-top: var(--bar); }
 body {
   margin: 0;
   background: #fff;
   color: var(--ink);
   font-family: var(--font);
-  font-size: 1.125rem;
-  line-height: 1.5;
+  font-size: 1.0625rem;
+  font-weight: 350;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
-
-h1, h2, p, ul { margin: 0; padding: 0; }
+h1, h2, p, ul, dl, dd, figure { margin: 0; padding: 0; }
 h1, h2 { font-weight: inherit; }
 ul { list-style: none; }
-
+img { display: block; width: 100%; height: auto; }
 a { color: var(--red); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 a:hover { color: var(--ink); }
 :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 
-.skip {
-  position: absolute;
-  left: 7rem;
-  top: -4rem;
-  z-index: 4;
-  padding: 0.5rem 1rem;
-  background: #fff;
-  color: var(--ink);
-}
+.skip { position: fixed; left: 1rem; top: -4rem; z-index: 40; padding: 0.5rem 1rem; background: #fff; color: var(--ink); }
 .skip:focus { top: 1rem; }
 
-/* Holds the scroll cue, which stays put while the page moves. */
-.stage {
-  display: none;
+/* Header */
+.bar {
   position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+  inset: 0 0 auto;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  height: var(--bar);
+  padding-inline: var(--edge);
+  background: #fff;
+  font-size: 0.9375rem;
 }
-.moving .stage { display: block; }
+.bar a { color: var(--ink); text-decoration: none; }
+.bar a:hover { color: var(--red); }
+.home { display: flex; align-items: center; gap: 0.75rem; font-weight: 500; }
+.mark { width: 2.5rem; height: auto; flex: none; }
+.fill-a { fill: var(--ink); }
+.fill-l { fill: var(--red); }
+/* The header logo starts as an outline; the large logo lands on it, solid. */
+.moving .mark path { fill: none; stroke-width: 0.7px; vector-effect: non-scaling-stroke; opacity: 0.75; }
+.moving .mark .fill-a { stroke: var(--ink); }
+.moving .mark .fill-l { stroke: var(--red); }
+.bar ul { display: flex; gap: 2rem; }
 
-/* The logo sits inside the side panel, so it scrolls exactly with the headline. */
+/* The logo the page draws, which ends up in the header. */
 .piece {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 30;
   overflow: visible;
   pointer-events: none;
   will-change: transform;
 }
 .moving .piece { display: block; }
-
-/* An outline of the whole logo, which scrolling traces over and then fills. */
-.ghost { fill: none; stroke-width: 0.5; }
+.ghost { fill: none; stroke-width: 0.45; }
 .ghost-a { stroke: var(--ink); opacity: 0.3; }
 .ghost-l { stroke: var(--red); opacity: 0.35; }
-.trace {
-  fill: none;
-  stroke-width: 0.5;
-  stroke-linejoin: miter;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-}
+.trace { fill: none; stroke-width: 0.45; stroke-dasharray: 1; stroke-dashoffset: 1; }
 .trace-a { stroke: var(--ink); }
 .trace-l { stroke: var(--red); }
-.fill-a, .slot .piece-a { fill: var(--ink); }
-.fill-l, .slot .piece-l { fill: var(--red); }
-
-/* Lined up with the headline by script.js. */
-.cue {
-  position: absolute;
-  bottom: 2rem;
-  color: var(--soft);
-  font-size: 0.875rem;
-}
-
-/* Two shards, McGill red and Queen's blue, split by the logo's diagonal cut.
-   script.js moves the cut up the strip as the page scrolls, so blue takes over. */
-.strip {
-  --split: 72%;
-  position: fixed;
-  inset: 0 auto 0 0;
-  z-index: 2;
-  width: var(--strip);
-  background: linear-gradient(210deg, var(--red) 0 var(--split), #fff var(--split) calc(var(--split) + 1.5%), var(--ink) calc(var(--split) + 1.5%));
-  clip-path: polygon(0 0, 62% 0, 100% 100%, 0 100%);
-}
-
-
-.mark {
-  position: fixed;
-  top: 1.75rem;
-  left: 1rem;
-  z-index: 3;
-  width: 2.25rem;
-}
-.mark svg { display: block; fill: #fff; }
-
-/* One side stays pinned while the other scrolls. */
-.page {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
-}
-
-.side {
-  position: sticky;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  /* Keeps the schools above Safari's bottom toolbar on phones. */
-  height: 100svh;
-  padding: 2rem 2rem 2rem calc(var(--strip) + clamp(1.25rem, 2.5vw, 2.5rem));
-}
-
-.column {
-  position: relative;
-  z-index: 1;
-  max-width: 54rem;
-  padding: 3rem clamp(2rem, 5vw, 5rem) 0 clamp(1rem, 2vw, 2rem);
-}
-.moving .column { padding-top: calc(var(--pin) + 42vh); }
-
-/* Small type */
-.top, h2, .pubs span, footer {
-  font-size: 0.875rem;
-  line-height: 1.5;
-}
-
-.top a { color: var(--ink); text-decoration: none; }
-.top a:hover { color: var(--red); }
-.name { font-weight: 500; }
-.top ul { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin-top: 0.5rem; }
-.top li a { color: var(--soft); }
 
 /* Opening */
-.opening { position: relative; margin-block: auto; }
-.slot { display: block; width: clamp(8rem, 24vh, 15rem); overflow: visible; }
-.moving .slot { visibility: hidden; }
-
+.hero-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  min-height: 100vh;
+  padding: calc(var(--bar) + 1rem) var(--edge) 3rem;
+  text-align: center;
+}
+.fullheight { position: absolute; top: 0; height: 100vh; visibility: hidden; }
+.moving .hero { height: calc(100vh + var(--pin)); }
+.moving .hero-inner { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 0; padding-block: 0; }
+.slot { width: min(40vw, 16rem); }
+.moving .slot { display: none; }
 h1 {
-  margin-top: clamp(1.25rem, 3.5vh, 2.5rem);
-  font-size: clamp(2.25rem, 3.5vw, 4.5rem);
+  font-size: clamp(2.9rem, 8.4vw, 8rem);
   font-weight: 300;
-  line-height: 1.08;
-  letter-spacing: -0.015em;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
 }
-h1 span, h1 em { display: block; }
+h1 span, h1 em { display: block; width: fit-content; margin-inline: auto; font-style: normal; }
+h1 em { color: var(--red); }
+.since { font-size: clamp(1.0625rem, 1.6vw, 1.5rem); color: var(--soft); }
+.cue {
+  display: none;
+  position: absolute;
+  bottom: 1rem;
+  z-index: 2;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--red);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.2;
+  pointer-events: none;
+}
+.moving .cue { display: flex; }
+/* The arrow nudges gently, so the button catches the eye without shouting. */
+.cue svg { display: block; width: 1.25rem; height: 1.25rem; animation: cue-nudge 1.8s ease-in-out infinite; }
+@keyframes cue-nudge {
+  0%, 100% { transform: translateY(-1.5px); }
+  50% { transform: translateY(2.5px); }
+}
 
-/* The headline starts as an outline and fills from left to right. */
-.moving h1 span, .moving h1 em {
-  --fill: 0%;
-  width: fit-content;
-  /* Keeps the fill from cutting off the descenders. */
-  padding-bottom: 0.2em;
-  margin-bottom: -0.2em;
-  color: transparent;
-  -webkit-text-stroke: 0.6px var(--line);
-  background: linear-gradient(90deg, var(--line) var(--fill), transparent var(--fill));
-  -webkit-background-clip: text;
-  background-clip: text;
-}
+/* Each line starts as a clean outline and fills from left to right. The base text is
+   painted white over its stroke, which hides the font's internal overlap marks. */
+.moving h1 span, .moving h1 em, .moving .since { position: relative; --fill: 0%; }
 .moving h1 span { --line: var(--ink); }
 .moving h1 em { --line: var(--red); }
-h1 em { color: var(--red); font-style: normal; }
-
-.since { margin-top: 1.1rem; color: var(--soft); font-size: 1rem; }
-/* Starts light and fills from left to right, after the headline. */
-.moving .since {
-  --fill: 0%;
-  width: fit-content;
-  color: transparent;
-  background: linear-gradient(90deg, var(--ink) var(--fill), #99a2b0 var(--fill));
-  -webkit-background-clip: text;
-  background-clip: text;
+.moving h1 span, .moving h1 em {
+  color: #fff;
+  -webkit-text-stroke: 1.3px var(--line);
+  paint-order: stroke fill;
+}
+.moving h1 span::after, .moving h1 em::after, .moving .since::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: var(--line);
+  -webkit-text-stroke: 0;
+  white-space: nowrap;
+  clip-path: inset(-20% calc(100% - var(--fill)) -30% -2%);
+}
+.moving .since { --line: var(--ink); color: #99a2b0; white-space: nowrap; }
+/* A white copy of each line, shown only where the navy panel covers it. */
+.moving h1 span::before, .moving h1 em::before, .moving .since::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  color: #fff;
+  -webkit-text-stroke: 0;
+  white-space: nowrap;
+  clip-path: var(--cut, polygon(0 0, 0 0, 0 0));
 }
 
-/* Team size as counts only: the site names no one but the director.
-   Columns size themselves, so a category can be added when it applies. */
-.team { max-width: 26rem; margin-top: clamp(1.25rem, 3.5vh, 2.5rem); }
-.team dl {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(0, 1fr);
-  margin: 0;
-  border-top: 1px solid var(--line-strong);
+/* Diagonal panels that sweep across at the end of the opening, at the logo's angle. */
+.sweep { display: none; position: absolute; top: 0; height: 100%; transform: translate3d(0, 0, 0) skewX(-30deg); will-change: transform; }
+.moving .sweep { display: block; }
+/* 100vh is the full height with browser bars hidden, so hiding them leaves no gap. */
+.sweeps { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden; }
+.moving .sweeps { display: block; }
+.moving .hero-inner > h1, .moving .since { position: relative; z-index: 1; }
+.sweep-navy { left: -70vh; width: calc(100vw + 140vh); background: var(--night); }
+.sweep-red { left: calc(-22vw - 35vh); width: 22vw; background: var(--red); }
+.sweep-strip { left: 76vw; width: max(3vw, 0.9rem); background: var(--red); }
+.sweep-soft { left: 14vw; width: 9vw; background: #17386a; }
+
+/* The page rises over the opening with a slanted edge. */
+.moving main {
+  position: relative;
+  z-index: 5;
+  margin-top: -9vw;
+  padding-top: 9vw;
+  overflow-x: clip;
+  background: #fff;
+  clip-path: polygon(0 9vw, 100% 0, 100% 100%, 0 100%);
 }
-.team dl > div {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
-  padding: 0.6rem 0.5rem 0 0;
-}
-.team dd {
-  margin: 0;
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
+.moving footer { position: relative; z-index: 5; }
+
+/* A line along the header showing progress down the page. */
+.progress { display: none; position: absolute; inset: auto 0 0; height: 3px; background: linear-gradient(90deg, var(--red), var(--ink)); transform: scaleX(0); transform-origin: left; }
+.moving .progress { display: block; }
+
+/* Sections */
+.band { padding: clamp(4.5rem, 10vw, 9rem) var(--edge); }
+h2 {
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2.75rem, 6.5vw, 6rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
-.team dl > div:nth-child(odd) dd { color: var(--red); }
-.team dt { margin-top: 0.2rem; color: var(--soft); font-size: 0.75rem; line-height: 1.25; }
-.team p { margin-top: 0.75rem; color: var(--soft); font-size: 0.75rem; }
+#campuses h2, #publications h2 { color: var(--red); }
+.split { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 2rem; align-items: start; }
+.split h2 { position: sticky; top: calc(var(--bar) + 1.5rem); margin: 0; font-size: clamp(2.5rem, 4.4vw, 5rem); }
 
-/* The two schools, each in its university's color, at the foot of the side panel. */
-.schools {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  max-width: 26rem;
-  color: var(--soft);
-  font-size: 0.75rem;
-  line-height: 1.35;
-}
-.schools strong, .schools span { display: block; }
-.schools strong { font-size: 0.8125rem; font-weight: 500; }
-.schools li:first-child strong { color: var(--red); }
-.schools li:last-child strong { color: var(--ink); }
+/* Shards that drift behind a section at their own speed. */
+.band { position: relative; overflow: clip; }
+.band > h2, .band > .mosaic, .band > .areas, .band > .members, .split > div { position: relative; z-index: 1; }
+.split > h2 { position: sticky; }
+.shard { display: none; position: absolute; z-index: 0; will-change: transform; pointer-events: none; }
+.moving .shard { display: block; }
+.shard-red { top: -6%; right: -12vw; width: 58vw; height: 72%; background: var(--red); clip-path: polygon(38% 0, 100% 0, 100% 100%, 0 100%); }
+.shard-navy { bottom: -4%; left: -14vw; width: 40vw; height: 52%; background: var(--ink); clip-path: polygon(0 0, 64% 0, 100% 100%, 0 100%); }
+.shard-pale { top: 10%; right: -10vw; width: 27vw; height: 90%; background: var(--red); clip-path: polygon(46% 0, 100% 0, 100% 100%, 0 100%); }
+.moving h2 { will-change: transform; }
 
-/* Sections: a quiet label above the content, divided by a hairline */
-.row {
-  display: grid;
-  gap: 1.75rem;
-  padding-block: clamp(3rem, 6vw, 5rem);
-  border-top: 1px solid var(--rule);
-  scroll-margin-top: 0;
-}
-.row:first-child { border-top: 0; padding-top: 0; }
-h2 { color: var(--soft); }
+/* Campuses */
+#campuses { background: #f1f3f7; }
+.moving main { padding-top: 0; }
+.moving #campuses { padding-top: calc(clamp(4.5rem, 10vw, 9rem) + 9vw); }
+.shard-campus { top: 16%; right: -12vw; width: 44vw; height: 58%; background: var(--red); clip-path: polygon(38% 0, 100% 0, 100% 100%, 0 100%); }
+.moving .mosaic figure { will-change: transform; }
+.mosaic { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; }
+.mosaic figure { grid-column: span 5; }
+.mosaic .wide { grid-column: span 7; }
+.mosaic figure { overflow: hidden; clip-path: polygon(0 0, calc(100% - 1.75rem) 0, 100% 3rem, 100% 100%, 0 100%); }
+.mosaic img { height: 100%; min-height: clamp(14rem, 30vw, 30rem); object-fit: cover; }
+.moving .mosaic img { will-change: transform; }
+.place { grid-column: 1 / -1; padding-top: 1.5rem; margin-bottom: clamp(1.5rem, 3vw, 3rem); color: var(--soft); }
+.place:last-child { margin-bottom: 0; }
+.place strong, .place small { display: block; }
+.place strong { color: var(--ink); font-size: clamp(1.375rem, 2.2vw, 2rem); font-weight: 350; letter-spacing: -0.015em; }
+.place.red strong { color: var(--red); }
+.place small { margin-top: 0.25rem; font-size: 0.8125rem; }
 
 /* Research */
-.areas {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 0;
-}
-/* Boxes with one corner cut at the logo's 60 degree angle. The box itself draws
-   the border, ::before the white inside, and ::after the navy hover fill. */
+.areas { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; }
 .areas > div {
   --cut: polygon(0 0, calc(100% - 1.25rem) 0, 100% 2.165rem, 100% 100%, 0 100%);
   position: relative;
-  padding: 1.5rem 1.75rem 1.6rem 1.5rem;
+  grid-column: span 2;
+  padding: 1.75rem 2rem 2.25rem 1.75rem;
   background: var(--line-strong);
   clip-path: var(--cut);
 }
-.areas > div::before, .areas > div::after {
-  content: "";
-  position: absolute;
-  clip-path: var(--cut);
-}
+.areas > div:nth-child(n + 4) { grid-column: span 3; }
+.areas > div::before, .areas > div::after { content: ""; position: absolute; clip-path: var(--cut); }
 .areas > div::before { inset: 1px; background: #fff; }
-.areas > div::after {
-  inset: 0;
-  background: var(--ink);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-/* An odd box out takes the full width, so the grid has no gap. */
-.areas > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.areas > div::after { inset: 0; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
 .areas dt, .areas dd { position: relative; z-index: 1; transition: color 0.25s ease; }
-.areas dt { font-size: 1.3125rem; font-weight: 400; line-height: 1.25; }
-.areas dt::before {
-  content: "";
-  display: block;
-  width: 1.75rem;
-  height: 3px;
-  margin-bottom: 1rem;
-  background: var(--red);
-}
+.areas dt { font-size: clamp(1.375rem, 2vw, 1.75rem); font-weight: 350; line-height: 1.2; letter-spacing: -0.015em; }
+.areas dt::before { content: ""; display: block; width: 1.75rem; height: 3px; margin-bottom: 1.25rem; background: var(--red); }
 .areas > div:nth-child(even) dt::before { background: var(--ink); }
-.areas dd { margin: 0.6rem 0 0; color: var(--soft); font-size: 1rem; line-height: 1.5; }
-
+.areas dd { margin-top: 0.75rem; color: var(--soft); }
 @media (hover: hover) {
   .areas > div:hover::after { transform: scaleX(1); }
   .areas > div:hover dt { color: #fff; }
   .areas > div:hover dd { color: #d6dde8; }
   .areas > div:nth-child(even):hover dt::before { background: #fff; }
+  .areas > div:nth-child(odd)::after { background: var(--red); }
+  .areas > div:nth-child(odd):hover dt::before { background: #fff; }
+  .areas > div:nth-child(odd):hover dd { color: #fff; }
 }
 
-/* Members: each person's own bio. script.js collapses long ones. */
-.members li + li { margin-top: 1.75rem; }
-.members .with-photo {
-  display: grid;
-  grid-template-columns: 6rem minmax(0, 1fr);
-  gap: 1.25rem;
-  align-items: start;
+/* The lab in numbers: team boxes step from light to dark, with publications in red. */
+.numbers { padding: clamp(2.5rem, 5vw, 4rem) var(--edge) clamp(1rem, 3vw, 2.5rem); }
+.numbers dl { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.2rem; max-width: 62rem; }
+.numbers dl > div {
+  padding: 0.7rem 0.85rem 0.6rem;
+  clip-path: polygon(0 0, calc(100% - 0.5rem) 0, 100% 0.87rem, 100% 100%, 0 100%);
 }
-.members img {
-  display: block;
-  width: 100%;
-  height: auto;
-  /* The same cut corner as the campus photos and research boxes. */
-  clip-path: polygon(0 0, calc(100% - 0.75rem) 0, 100% 1.3rem, 100% 100%, 0 100%);
+.numbers dl > div:nth-child(1) { background: #e6ebf2; }
+.numbers dl > div:nth-child(2) { background: #b9c6d8; }
+.numbers dl > div:nth-child(3) { background: #33527f; color: #fff; }
+.numbers dl > div:nth-child(4) { background: var(--ink); color: #fff; }
+.numbers dl > div:nth-child(5) { background: var(--red); color: #fff; }
+.numbers dl > div:nth-child(6) { background: #b90e31; color: #fff; }
+.numbers dd { font-size: clamp(1.5rem, 2vw, 1.875rem); font-weight: 350; line-height: 1; letter-spacing: -0.02em; }
+.numbers dt { margin-top: 0.2rem; font-size: 0.75rem; font-weight: 450; line-height: 1.3; }
+.numbers p { margin-top: 0.5rem; color: var(--soft); font-size: 0.8125rem; }
+
+/* Members */
+/* Compact cards, so the list stays tidy however many people join. */
+.members { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+.members li {
+  padding: 0.85rem 1.1rem 0.85rem 0.85rem;
+  background: #fdecee;
+  clip-path: polygon(0 0, calc(100% - 0.6rem) 0, 100% 1.04rem, 100% 100%, 0 100%);
 }
-.members strong { display: block; font-size: 1.25rem; font-weight: 400; line-height: 1.3; }
-.members p { max-width: 44rem; margin-top: 0.4rem; color: var(--soft); font-size: 1rem; }
-.members p.clamped {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-.members button {
-  margin-top: 0.3rem;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--red);
-  font: inherit;
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
-}
+.members li:nth-child(even) { background: #e6ebf2; }
+.members li.extra { display: none; }
+.members.open li.extra { display: block; }
+.members.open li.extra.with-photo { display: grid; }
+.with-photo { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); gap: 0.75rem; align-items: start; }
+.with-photo img { clip-path: polygon(0 0, calc(100% - 0.4rem) 0, 100% 0.7rem, 100% 100%, 0 100%); }
+.members strong { display: block; font-size: 1rem; font-weight: 450; line-height: 1.25; }
+.members p { margin-top: 0.2rem; color: var(--soft); font-size: 0.8125rem; line-height: 1.4; }
+.members p.clamped { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.members button { margin-top: 0.15rem; padding: 0; border: 0; background: none; color: var(--red); font: inherit; font-size: 0.75rem; font-weight: 500; cursor: pointer; }
+.show-all { margin-top: 0.85rem; padding: 0; border: 0; background: none; color: var(--red); font: inherit; font-size: 0.9375rem; font-weight: 500; cursor: pointer; }
 
 /* Publications */
-.pubs li + li { margin-top: 1.75rem; }
-.pubs cite {
-  display: block;
-  max-width: 44rem;
-  font-style: normal;
-  font-size: 1.25rem;
-  line-height: 1.3;
-}
-.pubs span { display: block; margin-top: 0.3rem; color: var(--soft); }
-.more { margin-top: 2rem; font-size: 0.875rem; }
+.pubs li { padding-block: 1.25rem; border-top: 1px solid var(--rule); }
+.pubs cite { display: block; font-size: clamp(1.125rem, 1.5vw, 1.3125rem); font-style: normal; line-height: 1.3; }
 .pubs cite a { color: inherit; text-decoration: none; }
 .pubs cite a:hover { color: var(--red); text-decoration: underline; }
-.all { margin-top: 2rem; }
-.all summary {
-  width: fit-content;
-  color: var(--red);
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
-}
-.all[open] summary { margin-bottom: 1.75rem; }
-.moving .all .pubs li { opacity: 1; translate: none; transition: none; }
+.pubs span { display: block; margin-top: 0.35rem; color: var(--soft); font-size: 0.875rem; }
+.all { margin-top: 1rem; }
+.all summary { width: fit-content; color: var(--red); font-size: 0.9375rem; font-weight: 500; cursor: pointer; }
+.all[open] summary { margin-bottom: 1rem; }
+.more { margin-top: 1rem; font-size: 0.9375rem; }
 
-/* Campuses */
-.campuses { display: grid; gap: 2rem; }
-.campuses figure { margin: 0; }
-.campuses .pair > div {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+/* Closing panel, echoing the opening's red and navy diagonals. */
+.closing {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(7rem, 13vw, 12rem) var(--edge) clamp(7rem, 13vw, 12rem);
+  background: var(--night);
+  color: #fff;
+  clip-path: polygon(0 clamp(1.5rem, 5vw, 5rem), 100% 0, 100% calc(100% - clamp(1.5rem, 5vw, 5rem)), 0 100%);
 }
-.campuses img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  /* The same cut corner as the research boxes. */
-  clip-path: polygon(0 0, calc(100% - 1.25rem) 0, 100% 2.165rem, 100% 100%, 0 100%);
-}
-.campuses figcaption { color: var(--soft); font-size: 0.875rem; line-height: 1.4; }
-.campuses figcaption { margin-top: 0.75rem; }
-.campuses strong, .campuses small { display: block; }
-.campuses small { margin-top: 0.35rem; font-size: 0.75rem; }
-.campuses strong { font-size: 1.125rem; font-weight: 400; }
-.campuses figure:first-child strong { color: var(--red); }
-.campuses figure:last-child strong { color: var(--ink); }
+.closing-red, .closing-strip { position: absolute; top: -10%; height: 120%; transform: skewX(-30deg); will-change: transform; }
+.closing-red { left: -30vw; width: 44vw; background: var(--red); }
+.closing-strip { right: 16vw; width: max(3vw, 0.9rem); background: var(--red); }
+.closing-body { position: relative; z-index: 1; max-width: 46rem; margin-left: clamp(0rem, 24vw, 26rem); }
+.closing h2 { margin-bottom: clamp(1.25rem, 2.5vw, 2rem); }
+.closing-lead { font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 300; line-height: 1.3; }
+.closing-mail { margin-top: clamp(1.25rem, 2.5vw, 2rem); font-size: clamp(1.0625rem, 1.5vw, 1.375rem); font-weight: 450; }
 
+/* Footer */
 footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 0.25rem 2.5rem;
-  padding-block: 2rem 3rem;
-  border-top: 1px solid var(--rule);
+  align-items: center;
+  gap: 0.35rem 2rem;
+  padding: 1.25rem var(--edge) 1.5rem;
   color: var(--soft);
+  font-size: 0.8125rem;
+  line-height: 1.4;
 }
+.foot-lab { display: flex; align-items: center; gap: 0.6rem; }
+.foot-mark { width: 1.5rem; flex: none; }
 
-/* Research and papers arrive as they scroll into view. */
-.moving .row h2, .moving .areas > div, .moving .members li, .moving .pubs li, .moving .campuses figure {
+/* Things arrive as they scroll into view. */
+.moving .mosaic figure { translate: 0 5rem; }
+.moving .areas > div:nth-child(odd) { translate: -5rem 2rem; }
+.moving .areas > div:nth-child(even) { translate: 5rem 2rem; }
+.moving .numbers dl > div { opacity: 0; translate: 0 4rem; transition: opacity 0.9s ease, translate 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+.moving .numbers dl > div:nth-child(2) { transition-delay: 0.1s; }
+.moving .numbers dl > div:nth-child(3) { transition-delay: 0.2s; }
+.moving .numbers dl > div:nth-child(4) { transition-delay: 0.3s; }
+.moving .numbers dl > div:nth-child(5) { transition-delay: 0.4s; }
+.moving .numbers dl > div:nth-child(6) { transition-delay: 0.5s; }
+.moving .mosaic figure, .moving .place, .moving .areas > div, .moving .members li, .moving .pubs > li {
   opacity: 0;
-  translate: 0 2rem;
   transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), translate 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.moving .place, .moving .members li, .moving .pubs > li { translate: 0 1.5rem; }
+.moving .all .pubs > li { opacity: 1; translate: none; transition: none; }
 .moving .seen { opacity: 1 !important; translate: 0 0 !important; }
 
 /* Not-found page */
-.lost {
-  padding: 22vh 2rem 0 calc(var(--strip) + clamp(2rem, 5vw, 5rem));
+.lost { display: grid; align-content: center; min-height: 100vh; padding: var(--edge); text-align: center; }
+.lost h1 { color: var(--red); }
+.lost p { margin-top: 2rem; }
+
+/* Two columns need the tints to step along each row, or they would form stripes. */
+@media (min-width: 56.01rem) and (max-width: 72rem) {
+  .members { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .members li:nth-child(n) { background: #fdecee; }
+  .members li:nth-child(4n + 2), .members li:nth-child(4n + 3) { background: #e6ebf2; }
 }
-.lost h1 { font-size: clamp(3rem, 7vw, 6rem); margin-top: 0; }
-.lost p { max-width: 31rem; margin-top: 2rem; font-size: 1.375rem; font-weight: 300; }
 
 @media (max-width: 56rem) {
-  /* The strip becomes a wedge across the top of the page. */
-  .strip {
-    position: absolute;
-    inset: 0 0 auto 0;
-    width: auto;
-    height: 5.25rem;
-    background: linear-gradient(120deg, var(--red) 0 70%, #fff 70% 71%, var(--ink) 71%);
-    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 100%);
-  }
-  .mark { position: absolute; top: 1rem; left: 1.5rem; }
-
-  /* No room for two columns: the opening holds still, then the page scrolls normally. */
-  .page { display: block; }
-  .moving .rail { height: calc(100vh + var(--pin)); }
-  .side { position: static; height: auto; padding: 6.25rem 1.5rem 3rem; }
-  .moving .side { position: sticky; height: 100vh; height: 100svh; padding-bottom: 1.5rem; }
-  h1 { font-size: clamp(2.75rem, 13.4vw, 6.5rem); }
-  /* With no side panel the logo stays centered, and sitting low leaves it room to start large. */
-  .opening { margin-block: auto 1rem; }
-  .slot { width: min(40vw, 20vh, 14rem); margin-inline: auto; }
+  :root { --bar: 5.25rem; }
+  .bar { flex-direction: column; align-items: flex-start; justify-content: center; gap: 0.2rem; font-size: 0.8125rem; }
+  .mark { width: 1.75rem; }
+  .home { gap: 0.5rem; font-size: 0.9375rem; }
+  .bar ul { gap: 0.8rem; }
+  .closing-red { left: -62vw; width: 72vw; }
+  .closing-strip { right: -6vw; }
+  .closing-body { margin-left: 0; }
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .split > h2 { position: relative; top: auto; margin-bottom: 1rem; font-size: clamp(2.75rem, 6.5vw, 6rem); }
+  .mosaic { grid-template-columns: minmax(0, 1fr); }
+  .mosaic figure, .mosaic .wide { grid-column: auto; }
   .areas { grid-template-columns: minmax(0, 1fr); }
-  .campuses .pair > div { grid-template-columns: minmax(0, 1fr); }
-  .areas > div { padding: 1.25rem 1.5rem 1.35rem 1.25rem; }
-  .column, .moving .column { padding: 0 1.5rem; }
-  .row:first-child { padding-top: 1rem; }
-  .lost { padding: 8rem 1.5rem 0; }
+  .areas > div, .areas > div:nth-child(n + 4) { grid-column: auto; }
+  .numbers dl { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .moving .shard-pale { display: none; }
+  .members { grid-template-columns: minmax(0, 1fr); }
+  .moving .shard-campus { display: none; }
+  .shard-red { top: 7rem; right: -22vw; width: 70vw; height: 34%; }
+  .shard-navy { width: 60vw; height: 30%; }
+  .moving .areas > div:nth-child(odd) { translate: -2.5rem 1rem; }
+  .moving .areas > div:nth-child(even) { translate: 2.5rem 1rem; }
 }
 
-/* Short phone screens have no room for these; the photo captions below repeat them. */
-@media (max-width: 56rem) and (max-height: 45rem) {
-  .schools { display: none; }
+@media (max-width: 24rem) {
+  .bar ul { gap: 0.55rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
